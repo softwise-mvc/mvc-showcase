@@ -41,7 +41,7 @@ Self-driven, async-first communicator. I ship independently, document clearly, a
 
 Looking for: Remote roles in AI-assisted development, DevOps engineering, or full-stack positions where AI fluency is a multiplier.
 
-Portfolio: [your-vercel-url]
+Portfolio: mvc-ai.vercel.app
 GitHub: github.com/softwise-mvc
 ```
 
