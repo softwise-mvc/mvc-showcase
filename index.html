@@ -35,6 +35,15 @@
     [data-lang="zh"] .lang-zh { display: inline; }
     [data-lang="en"] .lang-zh { display: none; }
     [data-lang="en"] .lang-en { display: inline; }
+    /* Scroll animations */
+    .slide-in { opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .slide-in.from-left { transform: translateX(-60px); }
+    .slide-in.from-right { transform: translateX(60px); }
+    .slide-in.from-bottom { transform: translateY(30px); }
+    .slide-in.visible { opacity: 1; transform: translate(0); }
+    .slide-in.delay-1 { transition-delay: 0.1s; }
+    .slide-in.delay-2 { transition-delay: 0.2s; }
+    .slide-in.delay-3 { transition-delay: 0.3s; }
   </style>
 </head>
 <body class="bg-zinc-950 text-zinc-100 font-sans" data-lang="en">
@@ -132,213 +141,408 @@
       </div>
 
       <!-- Project Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
+      <div id="project-grid">
 
-        <!-- Polyrobot -->
-        <a href="https://github.com/softwise-mvc/mvc-polyrobot" target="_blank" rel="noopener noreferrer" class="card block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="blockchain ai">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">🤖</span>
-              <h3 class="font-semibold text-lg text-zinc-100">Polyrobot</h3>
-            </div>
-            <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          </div>
-          <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-            <span class="lang-en">Prediction market trading platform with whale tracking, copy trading & arbitrage detection on Polygon.</span>
-            <span class="lang-zh">預測市場交易平台，具備鯨魚追蹤、跟單交易與套利偵測功能，部署於 Polygon 鏈上。</span>
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Next.js</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">TypeScript</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">wagmi</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Supabase</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Polygon</span>
-          </div>
-          <div class="flex items-center gap-2 text-xs text-emerald-400">
-            <span>🤖 AI-assisted</span>
-            <span class="text-zinc-600">·</span>
-            <span class="text-zinc-500">Blockchain / Web3</span>
-          </div>
-        </a>
+        <!-- === Section: AI & Vibe Coding === -->
+        <div class="section-header mb-6" data-section="ai">
+          <h3 class="text-lg font-semibold text-emerald-400 flex items-center gap-2">
+            <span class="w-8 h-px bg-emerald-400/40"></span>
+            <span class="lang-en">AI & Vibe Coding</span><span class="lang-zh">AI & Vibe Coding</span>
+            <span class="text-xs text-zinc-600 font-normal">2024 — now</span>
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
-        <!-- Neo4j Graphiti -->
-        <a href="https://github.com/softwise-mvc/neo4j-openai" target="_blank" rel="noopener noreferrer" class="card block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">🧠</span>
-              <h3 class="font-semibold text-lg text-zinc-100">Neo4j Graphiti</h3>
+          <!-- Polyrobot -->
+          <a href="https://github.com/softwise-mvc/mvc-polyrobot" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="blockchain ai">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🤖</span>
+                <h3 class="font-semibold text-lg text-zinc-100">Polyrobot</h3>
+              </div>
+              <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </div>
-            <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          </div>
-          <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-            <span class="lang-en">AI-powered memory system for development — tracks localization keys, Git operations & enforces coding rules via graph database.</span>
-            <span class="lang-zh">AI 驅動的開發記憶系統 — 透過圖資料庫追蹤在地化金鑰、Git 操作並強制執行程式碼規範。</span>
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Neo4j</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">OpenAI</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Docker</span>
-          </div>
-          <div class="flex items-center gap-2 text-xs text-emerald-400">
-            <span>🤖 AI-powered</span>
-            <span class="text-zinc-600">·</span>
-            <span class="text-zinc-500">AI / Memory System</span>
-          </div>
-        </a>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Prediction market trading platform with whale tracking, copy trading & arbitrage detection on Polygon.</span>
+              <span class="lang-zh">預測市場交易平台，具備鯨魚追蹤、跟單交易與套利偵測功能，部署於 Polygon 鏈上。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Next.js</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">TypeScript</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">wagmi</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Supabase</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Polygon</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>🤖 AI-assisted</span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">Blockchain / Web3</span>
+            </div>
+          </a>
 
-        <!-- 4URBABE / BabyPet — unified project -->
-        <div class="card bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="mobile web">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">🐾</span>
-              <h3 class="font-semibold text-lg text-zinc-100">4URBABE</h3>
+          <!-- Neo4j Graphiti -->
+          <a href="https://github.com/softwise-mvc/neo4j-openai" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom delay-1 block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🧠</span>
+                <h3 class="font-semibold text-lg text-zinc-100">Neo4j Graphiti</h3>
+              </div>
+              <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">AI-powered memory system for development — tracks localization keys, Git operations & enforces coding rules via graph database.</span>
+              <span class="lang-zh">AI 驅動的開發記憶系統 — 透過圖資料庫追蹤在地化金鑰、Git 操作並強制執行程式碼規範。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Neo4j</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">OpenAI</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Docker</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>🤖 AI-powered</span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">AI / Memory System</span>
+            </div>
+          </a>
+
+          <!-- Saria -->
+          <a href="https://github.com/softwise-mvc/saria" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom delay-2 block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">✨</span>
+                <h3 class="font-semibold text-lg text-zinc-100">Saria</h3>
+              </div>
+              <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">AI horoscope system — real astrological calculations, GPT-4o content generation, Instagram-ready images & LINE Bot integration.</span>
+              <span class="lang-zh">AI 星座系統 — 真實占星計算、GPT-4o 內容生成、Instagram 圖片製作與 LINE Bot 整合。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">OpenAI</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Flatlib</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">LINE Bot</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>🤖 AI-powered</span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">AI / Content Gen</span>
+            </div>
+          </a>
+
+          <!-- UltraDing -->
+          <a href="https://github.com/softwise-mvc/ultrading" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="fintech ai">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">💰</span>
+                <h3 class="font-semibold text-lg text-zinc-100">UltraDing</h3>
+              </div>
+              <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Crypto automated trading platform — multi-strategy execution, real-time OKX data, 20+ indicators, risk management & backtesting.</span>
+              <span class="lang-zh">加密貨幣自動交易平台 — 多策略執行、OKX 即時數據、20+ 技術指標、風控管理與回測系統。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">FastAPI</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Streamlit</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">PostgreSQL</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Redis</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Docker</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>🤖 AI-assisted</span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">FinTech / Trading</span>
+            </div>
+          </a>
+
+          <!-- ESG AI Prediction System -->
+          <div class="card slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="ai">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🌱</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">ESG AI Prediction</span>
+                  <span class="lang-zh">ESG AI 碳排預測</span>
+                </h3>
+              </div>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">IoT-based power & air quality monitoring with AI prediction for carbon emission management and ESG compliance reporting.</span>
+              <span class="lang-zh">基於 IoT 的電力與空氣品質監測，搭配 AI 預測進行碳排管理與 ESG 合規報告。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Django</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">AI/ML</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">IoT</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>👨‍💻 <span class="lang-en">Tech Lead</span><span class="lang-zh">技術主管</span></span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">AI / IoT / ESG</span>
             </div>
           </div>
-          <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-            <span class="lang-en">Pet community & health platform — evolved from website to native iOS to cross-platform Flutter app. Walk tracking, NFC tags, 3D models, rewards & e-commerce.</span>
-            <span class="lang-zh">寵物社群與健康平台 — 從網站演進到 iOS 原生再到 Flutter 跨平台應用。散步追蹤、NFC 標籤、3D 模型、獎勵與電商功能。</span>
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-3">
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Flutter</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Swift</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Firebase</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">HTML/CSS</span>
-          </div>
-          <!-- Platform evolution links -->
-          <div class="flex items-center gap-3 mb-4 text-xs">
-            <a href="https://github.com/softwise-mvc/babypet" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-zinc-500 hover:text-emerald-400 transition-colors">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              Flutter
-            </a>
-            <a href="https://github.com/softwise-mvc/babypet-ios" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-zinc-500 hover:text-emerald-400 transition-colors">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              iOS
-            </a>
-            <a href="https://github.com/softwise-mvc/4urbabe-website" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-zinc-500 hover:text-emerald-400 transition-colors">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              Web
-            </a>
-          </div>
-          <div class="flex items-center gap-2 text-xs text-emerald-400">
-            <span>🤖 AI-assisted</span>
-            <span class="text-zinc-600">·</span>
-            <span class="text-zinc-500">Mobile / Web / Pet Platform</span>
-          </div>
+
         </div>
 
-        <!-- Enterprise Banking Platform (NDA) -->
-        <div class="card bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 opacity-90" data-category="fintech mobile">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">🏦</span>
-              <h3 class="font-semibold text-lg">
-                <span class="lang-en">Enterprise Banking Platform</span>
-                <span class="lang-zh">企業銀行平台</span>
-              </h3>
-              <span class="text-xs text-zinc-600 border border-zinc-700 px-1.5 py-0.5 rounded">NDA</span>
+        <!-- === Section: Blockchain & Web3 === -->
+        <div class="section-header mb-6" data-section="blockchain fintech">
+          <h3 class="text-lg font-semibold text-emerald-400 flex items-center gap-2">
+            <span class="w-8 h-px bg-emerald-400/40"></span>
+            <span class="lang-en">Blockchain & Web3</span><span class="lang-zh">區塊鏈 & Web3</span>
+            <span class="text-xs text-zinc-600 font-normal">2019 — 2022</span>
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+          <!-- Multi-Chain Crypto Wallet -->
+          <div class="card slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="blockchain fintech">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🔐</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">Multi-Chain Crypto Wallet</span>
+                  <span class="lang-zh">多鏈加密貨幣錢包</span>
+                </h3>
+              </div>
             </div>
-            <svg class="w-4 h-4 text-zinc-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Crypto wallet with cold wallet integration, multi-chain support (BTC, ETH, TRX, BSC), digital bill system, on/off-chain balance management & Celery async transactions.</span>
+              <span class="lang-zh">加密錢包整合冷錢包，支援多鏈（BTC、ETH、TRX、BSC），數位鈔票系統、鏈上/鏈下餘額管理與 Celery 非同步交易。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Django</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Celery</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">iOS</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Android</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>👨‍💻 <span class="lang-en">Tech Lead</span><span class="lang-zh">技術主管</span></span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">Blockchain / FinTech</span>
+            </div>
           </div>
-          <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-            <span class="lang-en">Full-stack corporate banking suite — multi-platform native apps (iOS, Android, Flutter) with mock API backend.</span>
-            <span class="lang-zh">全端企業銀行套件 — 多平台原生應用（iOS、Android、Flutter）搭配模擬 API 後端。</span>
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Swift</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Kotlin</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Flutter</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Node.js</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Express</span>
+
+          <!-- NFT Marketplace DAPP -->
+          <div class="card slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="blockchain">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🖼️</span>
+                <h3 class="font-semibold text-lg text-zinc-100">NFT Marketplace</h3>
+              </div>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Web3 NFT trading platform — buy, sell & trade digital assets. Led ICO execution, ERC-20 token issuance & DEX listing.</span>
+              <span class="lang-zh">Web3 NFT 交易平台 — 數位資產買賣與交易。主導 ICO 執行、ERC-20 代幣發行與 DEX 上架。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">React</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Solidity</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Web3.js</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Node.js</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>👨‍💻 <span class="lang-en">Tech Lead</span><span class="lang-zh">技術主管</span></span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">Blockchain / DeFi</span>
+            </div>
           </div>
-          <div class="flex items-center gap-2 text-xs text-emerald-400">
-            <span>🤖 AI-assisted</span>
-            <span class="text-zinc-600">·</span>
-            <span class="text-zinc-500">FinTech / Corporate</span>
-          </div>
+
         </div>
 
-        <!-- Saria -->
-        <a href="https://github.com/softwise-mvc/saria" target="_blank" rel="noopener noreferrer" class="card block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">✨</span>
-              <h3 class="font-semibold text-lg text-zinc-100">Saria</h3>
-            </div>
-            <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          </div>
-          <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-            <span class="lang-en">AI horoscope system — real astrological calculations, GPT-4o content generation, Instagram-ready images & LINE Bot integration.</span>
-            <span class="lang-zh">AI 星座系統 — 真實占星計算、GPT-4o 內容生成、Instagram 圖片製作與 LINE Bot 整合。</span>
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">OpenAI</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Flatlib</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">LINE Bot</span>
-          </div>
-          <div class="flex items-center gap-2 text-xs text-emerald-400">
-            <span>🤖 AI-powered</span>
-            <span class="text-zinc-600">·</span>
-            <span class="text-zinc-500">AI / Content Gen</span>
-          </div>
-        </a>
+        <!-- === Section: Apps & Platforms === -->
+        <div class="section-header mb-6" data-section="mobile fintech web">
+          <h3 class="text-lg font-semibold text-emerald-400 flex items-center gap-2">
+            <span class="w-8 h-px bg-emerald-400/40"></span>
+            <span class="lang-en">Apps & Platforms</span><span class="lang-zh">應用 & 平台</span>
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
-        <!-- UltraDing -->
-        <a href="https://github.com/softwise-mvc/ultrading" target="_blank" rel="noopener noreferrer" class="card block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="fintech ai">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">💰</span>
-              <h3 class="font-semibold text-lg text-zinc-100">UltraDing</h3>
+          <!-- 4URBABE -->
+          <div class="card slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="mobile web">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🐾</span>
+                <h3 class="font-semibold text-lg text-zinc-100">4URBABE</h3>
+              </div>
             </div>
-            <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Pet community & health platform — evolved from website to native iOS to cross-platform Flutter app. Walk tracking, NFC tags, 3D models, rewards & e-commerce.</span>
+              <span class="lang-zh">寵物社群與健康平台 — 從網站演進到 iOS 原生再到 Flutter 跨平台應用。散步追蹤、NFC 標籤、3D 模型、獎勵與電商功能。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Flutter</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Swift</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Firebase</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">HTML/CSS</span>
+            </div>
+            <div class="flex items-center gap-3 mb-4 text-xs">
+              <a href="https://github.com/softwise-mvc/babypet" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-zinc-500 hover:text-emerald-400 transition-colors"><svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Flutter</a>
+              <a href="https://github.com/softwise-mvc/babypet-ios" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-zinc-500 hover:text-emerald-400 transition-colors"><svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> iOS</a>
+              <a href="https://github.com/softwise-mvc/4urbabe-website" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-zinc-500 hover:text-emerald-400 transition-colors"><svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Web</a>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>🤖 AI-assisted</span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">Mobile / Pet Platform</span>
+            </div>
           </div>
-          <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-            <span class="lang-en">Crypto automated trading platform — multi-strategy execution, real-time OKX data, 20+ indicators, risk management & backtesting.</span>
-            <span class="lang-zh">加密貨幣自動交易平台 — 多策略執行、OKX 即時數據、20+ 技術指標、風控管理與回測系統。</span>
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">FastAPI</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Streamlit</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">PostgreSQL</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Redis</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Docker</span>
-          </div>
-          <div class="flex items-center gap-2 text-xs text-emerald-400">
-            <span>🤖 AI-assisted</span>
-            <span class="text-zinc-600">·</span>
-            <span class="text-zinc-500">FinTech / Trading</span>
-          </div>
-        </a>
 
-        <!-- Multi-Chain Crypto Wallet -->
-        <div class="card bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="blockchain fintech">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <span class="text-2xl">🔐</span>
-              <h3 class="font-semibold text-lg text-zinc-100">
-                <span class="lang-en">Multi-Chain Crypto Wallet</span>
-                <span class="lang-zh">多鏈加密貨幣錢包</span>
-              </h3>
+          <!-- Enterprise Banking Platform (NDA) -->
+          <div class="card slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 opacity-90" data-category="fintech mobile">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🏦</span>
+                <h3 class="font-semibold text-lg">
+                  <span class="lang-en">Enterprise Banking Platform</span>
+                  <span class="lang-zh">企業銀行平台</span>
+                </h3>
+                <span class="text-xs text-zinc-600 border border-zinc-700 px-1.5 py-0.5 rounded">NDA</span>
+              </div>
+              <svg class="w-4 h-4 text-zinc-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Full-stack corporate banking suite — multi-platform native apps (iOS, Android, Flutter) with mock API backend.</span>
+              <span class="lang-zh">全端企業銀行套件 — 多平台原生應用（iOS、Android、Flutter）搭配模擬 API 後端。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Swift</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Kotlin</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Flutter</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Node.js</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Express</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>🤖 AI-assisted</span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">FinTech / Corporate</span>
             </div>
           </div>
-          <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-            <span class="lang-en">Crypto wallet with cold wallet integration, multi-chain support (BTC, ETH, TRX, BSC), digital bill system, on/off-chain balance management & Celery async transactions.</span>
-            <span class="lang-zh">加密錢包整合冷錢包，支援多鏈（BTC、ETH、TRX、BSC），數位鈔票系統、鏈上/鏈下餘額管理與 Celery 非同步交易。</span>
-          </p>
-          <div class="flex flex-wrap gap-1.5 mb-4">
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Django</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Celery</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">iOS</span>
-            <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Android</span>
+
+          <!-- WEB ERP / WMS -->
+          <div class="card slide-in from-bottom delay-2 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="web">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">📊</span>
+                <h3 class="font-semibold text-lg text-zinc-100">WEB ERP / WMS</h3>
+              </div>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Enterprise resource planning & warehouse management system — inventory tracking, order processing & business workflow automation.</span>
+              <span class="lang-zh">企業資源規劃與倉儲管理系統 — 庫存追蹤、訂單處理與業務流程自動化。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Django</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">PostgreSQL</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>👨‍💻 <span class="lang-en">Tech Lead</span><span class="lang-zh">技術主管</span></span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">Enterprise / Web</span>
+            </div>
           </div>
-          <div class="flex items-center gap-2 text-xs text-emerald-400">
-            <span>👨‍💻 <span class="lang-en">Tech Lead</span><span class="lang-zh">技術主管</span></span>
-            <span class="text-zinc-600">·</span>
-            <span class="text-zinc-500">Blockchain / FinTech</span>
+
+        </div>
+
+        <!-- === Section: Hardware & Earlier Work === -->
+        <div class="section-header mb-6" data-section="web">
+          <h3 class="text-lg font-semibold text-emerald-400 flex items-center gap-2">
+            <span class="w-8 h-px bg-emerald-400/40"></span>
+            <span class="lang-en">Hardware Era & Earlier Work</span><span class="lang-zh">硬體時期 & 早期作品</span>
+            <span class="text-xs text-zinc-600 font-normal">2001 — 2018</span>
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Smart Home IoT -->
+          <div class="card slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="web">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🏠</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">Smart Home IoT</span>
+                  <span class="lang-zh">智慧家庭 IoT</span>
+                </h3>
+              </div>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Smart pet feeder with IP camera & aquarium controller — secured 2 patents across Taiwan, Japan & Germany. Demoed at international exhibitions.</span>
+              <span class="lang-zh">智慧寵物餵食器搭配 IP Camera 與水族箱控制器 — 取得台灣、日本與德國共 2 項專利。於國際展覽展出。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">IoT</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Mobile APP</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Hardware</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>👨‍💻 <span class="lang-en">BU Head</span><span class="lang-zh">部門主管</span></span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">IoT / 2 Patents</span>
+            </div>
           </div>
+
+          <!-- Video Surveillance -->
+          <div class="card slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="web">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">📹</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">Video Surveillance</span>
+                  <span class="lang-zh">影像監控系統</span>
+                </h3>
+              </div>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Cloud-based video surveillance product line — IP cameras & NVR systems. 100K+ units shipped to global customers.</span>
+              <span class="lang-zh">雲端影像監控產品線 — IP Camera 與 NVR 系統。全球客戶出貨 100K+ 台。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">IP Camera</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Cloud</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">NVR</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>👨‍💻 <span class="lang-en">Project Manager</span><span class="lang-zh">專案經理</span></span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">100K+ Units Shipped</span>
+            </div>
+          </div>
+
+          <!-- E-commerce Systems -->
+          <div class="card slide-in from-bottom delay-2 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="web">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🛒</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">E-commerce & Legal DB</span>
+                  <span class="lang-zh">電子商務 & 法規資料庫</span>
+                </h3>
+              </div>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Built e-commerce platforms for major brands (Taiwan TV, Hello Kitty). Designed national legal database website — won 1st prize in government competition.</span>
+              <span class="lang-zh">為知名品牌（台視、Hello Kitty）建構電商平台。設計全國法規資料庫網站 — 政府競賽第一名。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Java</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">SQL</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Linux</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>👨‍💻 <span class="lang-en">Developer</span><span class="lang-zh">工程師</span></span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-zinc-500">1st Prize / Web</span>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -438,7 +642,7 @@
         <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-zinc-800 md:-translate-x-px"></div>
 
         <!-- Phase 5: AI & DevOps (2022-2025) -->
-        <div class="relative flex items-start mb-12 md:justify-end">
+        <div class="slide-in from-left relative flex items-start mb-12 md:justify-end">
           <div class="ml-12 md:ml-0 md:mr-[calc(50%+2rem)] md:text-right">
             <span class="text-emerald-400 font-mono text-sm font-semibold">2022 — 2025</span>
             <h3 class="text-lg font-semibold text-zinc-100 mt-1">
@@ -460,7 +664,7 @@
         </div>
 
         <!-- Phase 4: Blockchain (2019-2022) -->
-        <div class="relative flex items-start mb-12">
+        <div class="slide-in from-right relative flex items-start mb-12">
           <div class="ml-12 md:ml-[calc(50%+2rem)]">
             <span class="text-emerald-400 font-mono text-sm font-semibold">2019 — 2022</span>
             <h3 class="text-lg font-semibold text-zinc-100 mt-1">
@@ -495,7 +699,7 @@
         </div>
 
         <!-- Phase 3: IoT & Smart Hardware (2013-2018) -->
-        <div class="relative flex items-start mb-12 md:justify-end">
+        <div class="slide-in from-left relative flex items-start mb-12 md:justify-end">
           <div class="ml-12 md:ml-0 md:mr-[calc(50%+2rem)] md:text-right">
             <span class="text-zinc-500 font-mono text-sm font-semibold">2013 — 2018</span>
             <h3 class="text-lg font-semibold text-zinc-100 mt-1">
@@ -517,7 +721,7 @@
         </div>
 
         <!-- Phase 2: Electronics & Networking (2006-2013) -->
-        <div class="relative flex items-start mb-12">
+        <div class="slide-in from-right relative flex items-start mb-12">
           <div class="ml-12 md:ml-[calc(50%+2rem)]">
             <span class="text-zinc-500 font-mono text-sm font-semibold">2006 — 2013</span>
             <h3 class="text-lg font-semibold text-zinc-100 mt-1">
@@ -539,7 +743,7 @@
         </div>
 
         <!-- Phase 1: Software Engineering (2001-2006) -->
-        <div class="relative flex items-start md:justify-end">
+        <div class="slide-in from-left relative flex items-start md:justify-end">
           <div class="ml-12 md:ml-0 md:mr-[calc(50%+2rem)] md:text-right">
             <span class="text-zinc-500 font-mono text-sm font-semibold">2001 — 2006</span>
             <h3 class="text-lg font-semibold text-zinc-100 mt-1">
@@ -674,8 +878,10 @@
     }
 
     function filterProjects(category) {
-      const cards = document.querySelectorAll('#project-grid > .card');
+      const cards = document.querySelectorAll('#project-grid .card');
       const buttons = document.querySelectorAll('.filter-btn');
+      const sections = document.querySelectorAll('#project-grid .section-header');
+      const grids = document.querySelectorAll('#project-grid .grid');
 
       buttons.forEach(btn => {
         btn.classList.toggle('border-emerald-500', btn.dataset.filter === category);
@@ -683,13 +889,29 @@
       });
 
       cards.forEach(card => {
-        if (category === 'all' || card.dataset.category.includes(category)) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = (category === 'all' || card.dataset.category.includes(category)) ? '' : 'none';
+      });
+
+      // Show/hide section headers based on visible cards in their grid
+      sections.forEach((header, i) => {
+        const grid = grids[i];
+        if (!grid) return;
+        const visibleCards = grid.querySelectorAll('.card:not([style*="display: none"])');
+        header.style.display = visibleCards.length > 0 ? '' : 'none';
+        grid.style.display = visibleCards.length > 0 ? '' : 'none';
       });
     }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
   </script>
 
 </body>
