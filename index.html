@@ -80,16 +80,18 @@
   <!-- Hero -->
   <section class="min-h-screen flex items-center pt-16">
     <div class="max-w-6xl mx-auto px-6 py-20">
-      <p class="text-emerald-400 font-mono text-sm mb-4">
-        <span class="lang-en">Hi, I'm</span><span class="lang-zh">嗨，我是</span>
-      </p>
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-        Marvin Chang
-      </h1>
-      <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-4">
-        <span class="lang-en">Full-Stack AI Developer & DevOps Engineer</span>
-        <span class="lang-zh">全端 AI 開發者 & DevOps 工程師</span>
-      </p>
+      <div class="flex flex-col-reverse md:flex-row md:items-center md:gap-12 mb-2">
+        <div class="flex-1">
+          <p class="text-emerald-400 font-mono text-sm mb-4">
+            <span class="lang-en">Hi, I'm</span><span class="lang-zh">嗨，我是</span>
+          </p>
+          <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+            Marvin Chang
+          </h1>
+          <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-4">
+            <span class="lang-en">Full-Stack AI Developer & DevOps Engineer</span>
+            <span class="lang-zh">全端 AI 開發者 & DevOps 工程師</span>
+          </p>
       <p class="text-zinc-500 max-w-xl mb-10 leading-relaxed">
         <span class="lang-en">Building products across blockchain, mobile, fintech, and AI — from code to cloud with AWS & DevOps, turning ideas into real, shipped software using modern tools and AI-assisted development.</span>
         <span class="lang-zh">橫跨區塊鏈、行動應用、金融科技與 AI 領域，從程式碼到 AWS 雲端部署與 DevOps，運用現代工具與 AI 輔助開發，將想法轉化為實際上線的產品。</span>
@@ -101,6 +103,12 @@
         <a href="#about" class="px-6 py-3 border border-zinc-700 text-zinc-300 rounded-lg hover:border-zinc-500 hover:text-white transition-colors text-sm">
           <span class="lang-en">About Me</span><span class="lang-zh">關於我</span>
         </a>
+      </div>
+        </div>
+        <!-- Avatar -->
+        <div class="mb-8 md:mb-0 flex justify-center md:justify-end shrink-0">
+          <img src="avatar.png" alt="Marvin Chang" class="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover ring-2 ring-emerald-400/30 ring-offset-4 ring-offset-zinc-950 shadow-lg shadow-emerald-500/10" />
+        </div>
       </div>
     </div>
   </section>
