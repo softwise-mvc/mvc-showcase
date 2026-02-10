@@ -1101,6 +1101,17 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
+
+    // Visitor notification via ntfy.sh
+    if (!sessionStorage.getItem('notified')) {
+      sessionStorage.setItem('notified', '1');
+      const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+      fetch('https://ntfy.sh/mvcadmin-pp', {
+        method: 'POST',
+        headers: { 'Title': 'Portfolio Visitor' },
+        body: '📍 ' + now + '\n' + (document.referrer || 'Direct visit')
+      }).catch(() => {});
+    }
   </script>
 
 </body>
