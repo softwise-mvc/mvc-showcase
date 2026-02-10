@@ -1102,8 +1102,13 @@
 
     document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
 
-    // Visitor notification via ntfy.sh
-    if (!sessionStorage.getItem('notified')) {
+    // Owner flag: visit with ?me to mark this browser as owner
+    if (new URLSearchParams(location.search).has('me')) {
+      localStorage.setItem('owner', '1');
+    }
+
+    // Visitor notification via ntfy.sh (skip owner & same session)
+    if (!localStorage.getItem('owner') && !sessionStorage.getItem('notified')) {
       sessionStorage.setItem('notified', '1');
       const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
       fetch('https://ntfy.sh/mvcadmin-pp', {
