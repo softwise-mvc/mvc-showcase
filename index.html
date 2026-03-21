@@ -611,95 +611,105 @@
   <!-- AI Workflow -->
   <section id="ai-workflow" class="py-20 border-t border-zinc-800">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-2">
-        <span class="lang-en">How I Work</span><span class="lang-zh">我的工作方式</span>
-      </h2>
-      <p class="text-zinc-500 mb-10">
-        <span class="lang-en">1 person × N AI agents × parallel projects — the new way to build software.</span>
-        <span class="lang-zh">1 個人 × N 個 AI agents × 並行多專案 — 新一代的軟體建構方式。</span>
+
+      <!-- Header -->
+      <div class="slide-in from-bottom mb-12">
+        <h2 class="text-3xl font-bold mb-4">
+          <span class="lang-en">How I Work</span><span class="lang-zh">我的工作方式</span>
+        </h2>
+        <!-- Elevator pitch -->
+        <p class="text-xl text-zinc-300 max-w-2xl leading-snug">
+          <span class="lang-en">Most engineers use AI as a tool.<br>I use it as an engineering team.</span>
+          <span class="lang-zh">多數工程師把 AI 當工具。<br>我把它當一支工程團隊來指揮。</span>
+        </p>
+      </div>
+
+      <!-- 3 differentiators -->
+      <div class="grid md:grid-cols-3 gap-6 mb-14">
+        <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <div class="text-2xl mb-3">⚡</div>
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Rapid Tech Integration</span>
+            <span class="lang-zh">快速技術整合</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">From emerging technology to production in days — not months. Evaluate, architect, ship.</span>
+            <span class="lang-zh">新技術出現到生產上線，以天計算而非月。評估、架構、交付。</span>
+          </p>
+        </div>
+        <div class="slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <div class="text-2xl mb-3">🧩</div>
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Systems Orchestration</span>
+            <span class="lang-zh">系統指揮協調</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">Decompose complex problems into parallel workstreams. Each owned by an AI agent with clear scope and accountability.</span>
+            <span class="lang-zh">將複雜問題拆解成並行工作流，每條由 AI agent 負責，職責清晰不重疊。</span>
+          </p>
+        </div>
+        <div class="slide-in from-bottom delay-2 bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <div class="text-2xl mb-3">🔁</div>
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Autonomous Operations</span>
+            <span class="lang-zh">自主化運作</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">Systems that run themselves — automated pipelines, real-time monitoring, intelligent alerts. I focus on strategy and judgment.</span>
+            <span class="lang-zh">系統自主運作 — 自動化 pipeline、即時監控、智慧告警。我專注於策略與判斷。</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- 3-layer diagram -->
+      <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6 md:p-10 mb-8">
+        <div class="flex flex-col items-center gap-5 max-w-lg mx-auto">
+          <div class="w-full px-6 py-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center">
+            <p class="text-emerald-400 font-semibold">Me — AI Factory Lead</p>
+            <p class="text-zinc-500 text-xs mt-1">
+              <span class="lang-en">Architect · Orchestrate · Decide</span>
+              <span class="lang-zh">架構設計 · 指揮協調 · 決策判斷</span>
+            </p>
+          </div>
+          <div class="flex flex-col items-center text-zinc-600 text-xs gap-0.5">
+            <span>↓</span>
+            <span class="lang-en">directs</span><span class="lang-zh">指揮</span>
+          </div>
+          <div class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-xl text-center">
+            <p class="text-zinc-200 font-semibold">
+              <span class="lang-en">AI Execution Layer</span>
+              <span class="lang-zh">AI 執行層</span>
+            </p>
+            <p class="text-zinc-500 text-xs mt-1">
+              <span class="lang-en">Parallel agents · clear ownership · continuous delivery</span>
+              <span class="lang-zh">並行 agents · 各司其職 · 持續交付</span>
+            </p>
+          </div>
+          <div class="flex flex-col items-center text-zinc-600 text-xs gap-0.5">
+            <span>↓</span>
+            <span class="lang-en">powers</span><span class="lang-zh">驅動</span>
+          </div>
+          <div class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-xl text-center">
+            <p class="text-zinc-200 font-semibold">
+              <span class="lang-en">Autonomous Infrastructure</span>
+              <span class="lang-zh">自主化基礎設施</span>
+            </p>
+            <p class="text-zinc-500 text-xs mt-1">
+              <span class="lang-en">Deploy · Monitor · Alert · Iterate</span>
+              <span class="lang-zh">自動部署 · 即時監控 · 智慧告警 · 持續迭代</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof line -->
+      <p class="text-center text-zinc-600 text-sm slide-in from-bottom">
+        <span class="text-zinc-400 font-medium">
+          <span class="lang-en">3 production systems &nbsp;·&nbsp; parallel workstreams &nbsp;·&nbsp; zero manual ops</span>
+          <span class="lang-zh">3 個生產系統 &nbsp;·&nbsp; 多條並行工作流 &nbsp;·&nbsp; 零手動維運</span>
+        </span>
       </p>
 
-      <!-- Workflow diagram -->
-      <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6 md:p-8 mb-10">
-        <div class="flex flex-col items-center gap-4">
-          <!-- Top: You -->
-          <div class="px-6 py-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg text-center">
-            <span class="text-emerald-400 font-semibold">🧑‍💻 jungle (You)</span>
-            <p class="text-zinc-500 text-xs mt-1"><span class="lang-en">Vision · Direction · Decisions</span><span class="lang-zh">願景 · 方向 · 決策</span></p>
-          </div>
-          <div class="text-zinc-600">↓</div>
-          <!-- Middle: OpenClaw -->
-          <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-center">
-            <span class="text-zinc-200 font-semibold">⚡ OpenClaw</span>
-            <p class="text-zinc-500 text-xs mt-1"><span class="lang-en">AI Orchestration Hub · 24/7</span><span class="lang-zh">AI 指揮中樞 · 24/7</span></p>
-          </div>
-          <div class="text-zinc-600">↓</div>
-          <!-- Branches: 3 agents -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-2xl">
-            <div class="px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-center">
-              <span class="text-amber-400 font-mono text-sm">Claude Code</span>
-              <p class="text-zinc-600 text-xs mt-1">UltraTrading backend</p>
-            </div>
-            <div class="px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-center">
-              <span class="text-sky-400 font-mono text-sm">Codex</span>
-              <p class="text-zinc-600 text-xs mt-1">Polyrobot features</p>
-            </div>
-            <div class="px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-center">
-              <span class="text-purple-400 font-mono text-sm">Gemini</span>
-              <p class="text-zinc-600 text-xs mt-1">TWST AI analysis</p>
-            </div>
-          </div>
-          <div class="text-zinc-600">↓</div>
-          <!-- Bottom: Output -->
-          <div class="px-6 py-3 bg-zinc-800 border border-zinc-700 rounded-lg text-center">
-            <span class="text-zinc-300 font-semibold text-sm"><span class="lang-en">Auto Deploy → Discord alerts → 24/7 monitoring</span><span class="lang-zh">自動部署 → Discord 通知 → 24/7 監控</span></span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3 Architecture diagrams -->
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- UltraTrading -->
-        <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-5">
-          <h3 class="text-sm font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-            <span>💰</span> UltraTrading
-          </h3>
-          <pre class="text-xs text-zinc-500 font-mono leading-relaxed whitespace-pre-wrap">CMC top100
-  → OKX scan
-  → ADX gate (&gt;18)
-  → Supertrend signal
-  → Edge Functions
-  → pg_cron (15min)
-  → Discord #trading
-  → SL/TP monitor</pre>
-        </div>
-        <!-- Polyrobot -->
-        <div class="slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-5">
-          <h3 class="text-sm font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-            <span>🤖</span> Polyrobot
-          </h3>
-          <pre class="text-xs text-zinc-500 font-mono leading-relaxed whitespace-pre-wrap">Polygon chain
-  → Smart money wallets
-  → Whale alert (&gt;$50K)
-  → Market analysis
-  → Dashboard
-  → Soccer AI predictions
-  → Discord #alerts</pre>
-        </div>
-        <!-- TWST -->
-        <div class="slide-in from-bottom delay-2 bg-zinc-900 border border-zinc-800 rounded-xl p-5">
-          <h3 class="text-sm font-semibold text-emerald-400 mb-3 flex items-center gap-2">
-            <span>📈</span> TWST
-          </h3>
-          <pre class="text-xs text-zinc-500 font-mono leading-relaxed whitespace-pre-wrap">TWSE MIS + FinMind
-  → Real-time data
-  → Gemini 2.5 Flash
-  → AI analysis
-  → Pre/Intra/Post reports
-  → Vercel cron
-  → Discord #twst</pre>
-        </div>
-      </div>
     </div>
   </section>
 
