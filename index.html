@@ -53,6 +53,13 @@
     .slide-in.delay-1 { transition-delay: 0.1s; }
     .slide-in.delay-2 { transition-delay: 0.2s; }
     .slide-in.delay-3 { transition-delay: 0.3s; }
+    /* Disable text selection */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
   </style>
   <!-- GoatCounter Analytics -->
   <script data-goatcounter="https://mvcadmin.goatcounter.com/count"
@@ -1418,6 +1425,20 @@
       <div class="text-xs text-zinc-700">&copy; 2026 Marvin Chang · Built with AI ⚡</div>
     </div>
   </footer>
+
+  <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    // Disable copy / cut
+    document.addEventListener('copy', function(e) { e.preventDefault(); });
+    document.addEventListener('cut', function(e) { e.preventDefault(); });
+    // Disable keyboard shortcuts: Ctrl/Cmd + C/U/S/A/P
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && ['c','u','s','a','p'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+      }
+    });
+  </script>
 
 </body>
 </html>
