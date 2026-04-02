@@ -31,6 +31,15 @@
     .card:hover { transform: translateY(-4px); }
     .card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .badge { transition: background-color 0.2s ease; }
+    .cover-image {
+      transform: scale(1.02);
+      filter: blur(1px) saturate(0.98) brightness(0.9);
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+    .group:hover .cover-image {
+      transform: scale(1.04);
+      filter: blur(0.35px) saturate(1) brightness(0.97);
+    }
     [data-lang="zh"] .lang-en { display: none; }
     [data-lang="zh"] .lang-zh { display: inline; }
     [data-lang="en"] .lang-zh { display: none; }
@@ -127,71 +136,6 @@
     </div>
   </section>
 
-  <!-- Selected Case Studies -->
-  <section id="case-studies" class="py-16 border-t border-zinc-800">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-10">
-        <h2 class="text-3xl font-bold mb-3">
-          <span class="lang-en">Selected AI Systems</span><span class="lang-zh">重點 AI 系統案例</span>
-        </h2>
-        <p class="text-zinc-500 max-w-3xl">
-          <span class="lang-en">Three recent systems that best represent how I lead AI-assisted delivery: product framing, implementation, guardrails, and operational verification.</span>
-          <span class="lang-zh">三個最能代表我如何做 AI-assisted delivery 的近期系統：從產品定義、實作落地，到 guardrails 與 operational verification。</span>
-        </p>
-      </div>
-      <div class="grid lg:grid-cols-3 gap-6">
-        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl">📈</span>
-            <h3 class="text-lg font-semibold text-zinc-100">TWST Main</h3>
-          </div>
-          <ul class="space-y-3 text-sm text-zinc-400 leading-relaxed">
-            <li>
-              <span class="lang-en">Built a Taiwan stock analysis and signal platform combining market data, broker reports, and an LLM-based structured decision flow.</span>
-              <span class="lang-zh">建立台股分析與訊號平台，整合市場資料、券商研究與 LLM 結構化決策流程。</span>
-            </li>
-            <li>
-              <span class="lang-en">Added postmarket feedback loops, signal-quality controls, auditability, and OpenAI-to-Gemini failover to improve decision quality rather than only generate outputs.</span>
-              <span class="lang-zh">加入盤後回饋閉環、訊號品質控制、auditability 與 OpenAI→Gemini failover，目標是提升決策品質而不只是生成結果。</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl">🧪</span>
-            <h3 class="text-lg font-semibold text-zinc-100">TWST Lab</h3>
-          </div>
-          <ul class="space-y-3 text-sm text-zinc-400 leading-relaxed">
-            <li>
-              <span class="lang-en">Built an isolated simulation and training runtime for execution review, replay drills, and robot-assisted trading experiments on separate infrastructure.</span>
-              <span class="lang-zh">建立隔離式 simulation / training runtime，用於 execution review、replay drills 與 robot-assisted trading experiments。</span>
-            </li>
-            <li>
-              <span class="lang-en">Designed guardrails for environment isolation, persistent state, runtime checks, and Discord-driven operational workflows.</span>
-              <span class="lang-zh">設計 environment isolation、persistent state、runtime checks 與 Discord-driven operational workflows 等 guardrails。</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl">💰</span>
-            <h3 class="text-lg font-semibold text-zinc-100">UltraTrading</h3>
-          </div>
-          <ul class="space-y-3 text-sm text-zinc-400 leading-relaxed">
-            <li>
-              <span class="lang-en">Built a multi-runner crypto trading and paper-trading system with closed-loop learning, deploy verification, and operational audit layers.</span>
-              <span class="lang-zh">建立多 runner 的 crypto trading / paper trading system，包含 closed-loop learning、deploy verification 與 operational audit layers。</span>
-            </li>
-            <li>
-              <span class="lang-en">Focused on engineering reliability: safe RPC wrappers, schema-code alignment QA, drift detection, and reconciliation safeguards.</span>
-              <span class="lang-zh">重點放在工程可靠性：safe RPC wrappers、schema-code alignment QA、drift detection 與 reconciliation safeguards。</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Projects -->
   <section id="projects" class="py-20">
     <div class="max-w-6xl mx-auto px-6">
@@ -237,23 +181,113 @@
         <div class="section-header mb-6" data-section="ai">
           <h3 class="text-lg font-semibold text-emerald-400 flex items-center gap-2">
             <span class="w-8 h-px bg-emerald-400/40"></span>
-            <span class="lang-en">AI & Vibe Coding</span><span class="lang-zh">AI & Vibe Coding</span>
+            <span class="lang-en">Featured AI Systems</span><span class="lang-zh">代表性 AI 系統</span>
             <span class="text-xs text-zinc-600 font-normal">2024 — now</span>
           </h3>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-zinc-500">
+          <span class="h-px w-12 bg-zinc-800"></span>
+          <span class="lang-en">2025 - Now · Still Fine-Tuning</span>
+          <span class="lang-zh">2025 - Now · 持續優化中</span>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
 
-          <!-- Polyrobot -->
-          <a href="https://github.com/softwise-mvc/mvc-polyrobot" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="blockchain ai">
+          <!-- TWST -->
+          <a href="https://mvc-twst.vercel.app" target="_blank" rel="noopener noreferrer" class="group card slide-in from-bottom block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai web">
+            <div class="relative mb-5 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950">
+              <img src="public/images/projects/twst-main-cover.png" alt="TWST main screenshot" class="cover-image h-44 w-full object-cover object-center" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/10 to-transparent"></div>
+              <div class="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-zinc-950/85 px-2.5 py-1 text-[11px] text-emerald-300 backdrop-blur">
+                <span>Market analysis + AI robot workflow</span>
+              </div>
+            </div>
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
-                <span class="text-2xl">🤖</span>
-                <h3 class="font-semibold text-lg text-zinc-100">Polyrobot</h3>
+                <span class="text-2xl">📈</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">TWST Signal Prediction</span>
+                  <span class="lang-zh">台股訊號預測系統</span>
+                </h3>
+              </div>
+              <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Taiwan stock intelligence system combining market data, broker research, AI-assisted trade analysis, and postmarket feedback loops.</span>
+              <span class="lang-zh">台股分析與訊號平台，整合市場資料、券商研究、結構化 LLM 決策與盤後回饋閉環。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Next.js</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">TypeScript</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Supabase</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">OpenAI / Gemini</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">TWSE MIS</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>🤖 AI-assisted</span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-sky-300/50">Signal Platform / Closed Loop</span>
+            </div>
+          </a>
+
+          <!-- UltraTrading -->
+          <a href="https://github.com/softwise-mvc/ultrading" target="_blank" rel="noopener noreferrer" class="group card slide-in from-bottom block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="fintech ai">
+            <div class="relative mb-5 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950">
+              <img src="public/images/projects/ultrading-cover.png" alt="UltraTrading dashboard screenshot" class="cover-image h-44 w-full object-cover object-center" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/15 to-transparent"></div>
+              <div class="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-zinc-950/85 px-2.5 py-1 text-[11px] text-emerald-300 backdrop-blur">
+                <span>Closed-loop learning</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">💰</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">UltraTrading — Crypto Backtesting Engine</span>
+                  <span class="lang-zh">加密貨幣AI自動交易回測系統</span>
+                </h3>
               </div>
               <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-              <span class="lang-en">Prediction market trading platform with whale tracking, copy trading & arbitrage detection on Polygon.</span>
+              <span class="lang-en">Crypto trading operations system with multi-runner paper trading, closed-loop learning, deploy verification, and engineering reliability layers.</span>
+              <span class="lang-zh">多 runner 的加密貨幣交易與 paper-trading 系統，重點放在 closed-loop learning、deploy verification 與工程可靠性。</span>
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">FastAPI</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Streamlit</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">PostgreSQL</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Redis</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Docker</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-emerald-400">
+              <span>🤖 AI-assisted</span>
+              <span class="text-zinc-600">·</span>
+              <span class="text-sky-300/50">FinTech / Trading</span>
+            </div>
+          </a>
+
+          <!-- PolyRobot -->
+          <a href="https://github.com/softwise-mvc/mvc-polyrobot" target="_blank" rel="noopener noreferrer" class="group card slide-in from-bottom block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="blockchain ai">
+            <div class="relative mb-5 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950">
+              <img src="public/images/projects/polyrobot-cover.png" alt="PolyRobot dashboard screenshot" class="cover-image h-44 w-full object-cover object-center" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/12 to-transparent"></div>
+              <div class="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-zinc-950/85 px-2.5 py-1 text-[11px] text-sky-200 backdrop-blur">
+                <span>Polymarket AI signal view</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">🤖</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">PolyRobot — Polymarket AI Predictor</span>
+                  <span class="lang-zh">PolyRobot — Polymarket AI預測系統</span>
+                </h3>
+              </div>
+              <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            </div>
+            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">Polymarket trading agent with whale tracking, signal ranking, and AI-assisted market scanning for faster opportunity review on Polygon.</span>
               <span class="lang-zh">預測市場交易平台，具備鯨魚追蹤、跟單交易與套利偵測功能，部署於 Polygon 鏈上。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
@@ -269,39 +303,51 @@
               <span class="text-sky-300/50">Blockchain / Web3</span>
             </div>
           </a>
+        </div>
+        <div class="mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.22em] text-zinc-500">
+          <span class="h-px w-12 bg-zinc-800"></span>
+          <span class="lang-en">2024 - 2025</span>
+          <span class="lang-zh">2024 - 2025</span>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
-          <!-- Neo4j Graphiti -->
-          <a href="https://github.com/softwise-mvc/neo4j-openai" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom delay-1 block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai">
+          <!-- ESG AI Prediction System -->
+          <div class="card slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="ai">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
-                <span class="text-2xl">🧠</span>
-                <h3 class="font-semibold text-lg text-zinc-100">Neo4j Graphiti</h3>
+                <span class="text-2xl">🌱</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">ESG AI — Carbon Prediction</span>
+                  <span class="lang-zh">ESG AI — 碳排預測系統</span>
+                </h3>
               </div>
-              <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-              <span class="lang-en">AI-powered memory system for development — tracks localization keys, Git operations & enforces coding rules via graph database.</span>
-              <span class="lang-zh">AI 驅動的開發記憶系統 — 透過圖資料庫追蹤在地化金鑰、Git 操作並強制執行程式碼規範。</span>
+              <span class="lang-en">IoT-based power & air quality monitoring with AI prediction for carbon emission management and ESG compliance reporting.</span>
+              <span class="lang-zh">基於 IoT 的電力與空氣品質監測，搭配 AI 預測進行碳排管理與 ESG 合規報告。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Neo4j</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">OpenAI</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Docker</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Django</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">AI/ML</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">IoT</span>
             </div>
             <div class="flex items-center gap-2 text-xs text-emerald-400">
-              <span>🤖 AI-powered</span>
+              <span>👨‍💻 <span class="lang-en">Tech Lead</span><span class="lang-zh">技術主管</span></span>
               <span class="text-zinc-600">·</span>
-              <span class="text-sky-300/50">AI / Memory System</span>
+              <span class="text-sky-300/50">AI / IoT / ESG</span>
             </div>
-          </a>
+          </div>
 
           <!-- Saria -->
           <a href="https://github.com/softwise-mvc/saria" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom delay-2 block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
                 <span class="text-2xl">✨</span>
-                <h3 class="font-semibold text-lg text-zinc-100">Saria</h3>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">Saria — AI Horoscope CMS</span>
+                  <span class="lang-zh">Saria — AI占星內容管理系統</span>
+                </h3>
               </div>
               <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </div>
@@ -322,88 +368,34 @@
             </div>
           </a>
 
-          <!-- UltraDing -->
-          <a href="https://github.com/softwise-mvc/ultrading" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="fintech ai">
+          <!-- Neo4j Graphiti -->
+          <a href="https://github.com/softwise-mvc/neo4j-openai" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom delay-1 block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
-                <span class="text-2xl">💰</span>
-                <h3 class="font-semibold text-lg text-zinc-100">UltraDing</h3>
+                <span class="text-2xl">🧠</span>
+                <h3 class="font-semibold text-lg text-zinc-100">
+                  <span class="lang-en">Graphiti — Developer Memory</span>
+                  <span class="lang-zh">Graphiti — 開發者記憶系統</span>
+                </h3>
               </div>
               <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-              <span class="lang-en">Multi-runner crypto trading and paper-trading system focused on closed-loop learning, deploy verification, and engineering reliability.</span>
-              <span class="lang-zh">多 runner 的加密貨幣交易與 paper-trading 系統，重點放在 closed-loop learning、deploy verification 與工程可靠性。</span>
+              <span class="lang-en">AI-powered memory system for development — tracks localization keys, Git operations & enforces coding rules via graph database.</span>
+              <span class="lang-zh">AI 驅動的開發記憶系統 — 透過圖資料庫追蹤在地化金鑰、Git 操作並強制執行程式碼規範。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">FastAPI</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Streamlit</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">PostgreSQL</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Redis</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Neo4j</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">OpenAI</span>
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Docker</span>
             </div>
             <div class="flex items-center gap-2 text-xs text-emerald-400">
-              <span>🤖 AI-assisted</span>
+              <span>🤖 AI-powered</span>
               <span class="text-zinc-600">·</span>
-              <span class="text-sky-300/50">FinTech / Trading</span>
+              <span class="text-sky-300/50">AI / Memory System</span>
             </div>
           </a>
-
-          <!-- TWST -->
-          <a href="https://mvc-twst.vercel.app" target="_blank" rel="noopener noreferrer" class="card slide-in from-bottom delay-1 block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700 cursor-pointer no-underline" data-category="ai web">
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex items-center gap-2">
-                <span class="text-2xl">📈</span>
-                <h3 class="font-semibold text-lg text-zinc-100">TWST Main</h3>
-              </div>
-              <svg class="w-4 h-4 text-zinc-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </div>
-            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-              <span class="lang-en">Taiwan stock analysis and signal platform combining market data, broker reports, structured LLM decisions, and postmarket feedback loops.</span>
-              <span class="lang-zh">台股分析與訊號平台，整合市場資料、券商研究、結構化 LLM 決策與盤後回饋閉環。</span>
-            </p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Next.js</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">TypeScript</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Supabase</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">OpenAI / Gemini</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">TWSE MIS</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs text-emerald-400">
-              <span>🤖 AI-assisted</span>
-              <span class="text-zinc-600">·</span>
-              <span class="text-sky-300/50">Signal Platform / Closed Loop</span>
-            </div>
-          </a>
-
-          <!-- ESG AI Prediction System -->
-          <div class="card slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="ai">
-            <div class="flex items-center justify-between mb-3">
-              <div class="flex items-center gap-2">
-                <span class="text-2xl">🌱</span>
-                <h3 class="font-semibold text-lg text-zinc-100">
-                  <span class="lang-en">ESG AI Prediction</span>
-                  <span class="lang-zh">ESG AI 碳排預測</span>
-                </h3>
-              </div>
-            </div>
-            <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-              <span class="lang-en">IoT-based power & air quality monitoring with AI prediction for carbon emission management and ESG compliance reporting.</span>
-              <span class="lang-zh">基於 IoT 的電力與空氣品質監測，搭配 AI 預測進行碳排管理與 ESG 合規報告。</span>
-            </p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Django</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">AI/ML</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">IoT</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs text-emerald-400">
-              <span>👨‍💻 <span class="lang-en">Tech Lead</span><span class="lang-zh">技術主管</span></span>
-              <span class="text-zinc-600">·</span>
-              <span class="text-sky-300/50">AI / IoT / ESG</span>
-            </div>
-          </div>
 
         </div>
 
@@ -486,7 +478,14 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
           <!-- 4URBABE -->
-          <div class="card slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="mobile web">
+          <div class="group card slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="mobile web">
+            <div class="relative mb-5 overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950">
+              <img src="public/images/projects/ai-pet-shot.png" alt="4URBABE AI pet demo screenshot" class="h-44 w-full object-cover object-top transition duration-300 group-hover:scale-[1.02] group-hover:brightness-110" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/15 to-transparent"></div>
+              <div class="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-zinc-950/85 px-2.5 py-1 text-[11px] text-emerald-300 backdrop-blur">
+                <span>App + pet AI demo</span>
+              </div>
+            </div>
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
                 <span class="text-2xl">🐾</span>
@@ -726,43 +725,73 @@
         </div>
       </div>
 
-      <!-- 3-layer diagram -->
-      <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6 md:p-10 mb-8">
-        <div class="flex flex-col items-center gap-5 max-w-lg mx-auto">
-          <div class="w-full px-6 py-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center">
-            <p class="text-emerald-400 font-semibold">Me — AI-Native Technical Lead</p>
-            <p class="text-zinc-500 text-xs mt-1">
-              <span class="lang-en">Shape scope · make decisions · keep quality high</span>
-              <span class="lang-zh">定義範圍 · 做決策 · 守住品質</span>
+      <!-- AI workflow operating model -->
+      <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-2xl p-6 md:p-10 mb-8 overflow-hidden">
+        <div class="max-w-5xl mx-auto">
+          <div class="mb-8 text-center">
+            <p class="text-[11px] uppercase tracking-[0.28em] text-emerald-400/80 mb-3">
+              <span class="lang-en">AI Workflow Operating Model</span>
+              <span class="lang-zh">AI 工作流運作模型</span>
             </p>
+            <h3 class="text-xl md:text-2xl font-semibold text-zinc-100 leading-tight">
+              <span class="lang-en">AI workflow for delivery, implementation, and quality control.</span>
+              <span class="lang-zh">面向交付、實作與品質控制的 AI 工作流。</span>
+            </h3>
           </div>
-          <div class="flex flex-col items-center text-zinc-600 text-xs gap-0.5">
-            <span>↓</span>
-            <span class="lang-en">directs</span><span class="lang-zh">指揮</span>
-          </div>
-          <div class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-xl text-center">
-            <p class="text-zinc-200 font-semibold">
-              <span class="lang-en">AI-Assisted Delivery Layer</span>
-              <span class="lang-zh">AI-Assisted Delivery Layer</span>
-            </p>
-            <p class="text-zinc-500 text-xs mt-1">
-              <span class="lang-en">Claude · Codex · Gemini with scoped context, reviews, and handoffs</span>
-              <span class="lang-zh">用 Claude、Codex、Gemini 搭配 scoped context、reviews 與 handoffs</span>
-            </p>
-          </div>
-          <div class="flex flex-col items-center text-zinc-600 text-xs gap-0.5">
-            <span>↓</span>
-            <span class="lang-en">powers</span><span class="lang-zh">驅動</span>
-          </div>
-          <div class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-xl text-center">
-            <p class="text-zinc-200 font-semibold">
-              <span class="lang-en">Operational Guardrails</span>
-              <span class="lang-zh">Operational Guardrails</span>
-            </p>
-            <p class="text-zinc-500 text-xs mt-1">
-              <span class="lang-en">Verify · deploy · monitor · review · improve</span>
-              <span class="lang-zh">驗證 · 部署 · 監控 · 檢討 · 改進</span>
-            </p>
+
+          <div class="grid gap-4 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] md:items-stretch">
+            <div class="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.06] p-5">
+              <div class="mb-3 text-[11px] uppercase tracking-[0.24em] text-emerald-300/70">
+                <span class="lang-en">AI Workflow</span>
+                <span class="lang-zh">工作流設計</span>
+              </div>
+              <h4 class="text-lg font-semibold text-zinc-100 mb-2">
+                <span class="lang-en">Scope & Decision Framing</span>
+                <span class="lang-zh">需求與決策框架</span>
+              </h4>
+              <p class="text-sm leading-relaxed text-zinc-400">
+                <span class="lang-en">AI workflow design, context shaping, and delivery direction.</span>
+                <span class="lang-zh">AI 工作流設計、context shaping 與交付方向。</span>
+              </p>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center px-1 text-zinc-600" aria-hidden="true">
+              <span class="text-xl">→</span>
+            </div>
+
+            <div class="rounded-2xl border border-zinc-700 bg-zinc-800/60 p-5">
+              <div class="mb-3 text-[11px] uppercase tracking-[0.24em] text-zinc-500">
+                <span class="lang-en">Multi-Model</span>
+                <span class="lang-zh">多模型協作</span>
+              </div>
+              <h4 class="text-lg font-semibold text-zinc-100 mb-2">
+                <span class="lang-en">AI-Assisted Build & Debug</span>
+                <span class="lang-zh">AI 輔助實作與除錯</span>
+              </h4>
+              <p class="text-sm leading-relaxed text-zinc-400">
+                <span class="lang-en">Claude, Codex, and Gemini for implementation, review, debugging, and iteration.</span>
+                <span class="lang-zh">運用 Claude、Codex、Gemini 進行實作、review、除錯與迭代。</span>
+              </p>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center px-1 text-zinc-600" aria-hidden="true">
+              <span class="text-xl">→</span>
+            </div>
+
+            <div class="rounded-2xl border border-sky-500/20 bg-sky-500/[0.04] p-5">
+              <div class="mb-3 text-[11px] uppercase tracking-[0.24em] text-sky-300/70">
+                <span class="lang-en">Control Layer</span>
+                <span class="lang-zh">控制層</span>
+              </div>
+              <h4 class="text-lg font-semibold text-zinc-100 mb-2">
+                <span class="lang-en">Verification & Closed-Loop Control</span>
+                <span class="lang-zh">驗證與閉環控制</span>
+              </h4>
+              <p class="text-sm leading-relaxed text-zinc-400">
+                <span class="lang-en">QA gates, deploy checks, runtime guardrails, and feedback loops.</span>
+                <span class="lang-zh">QA gates、部署檢查、runtime guardrails 與 feedback loops。</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -770,8 +799,8 @@
       <!-- Proof line -->
       <p class="text-center text-zinc-600 text-sm slide-in from-bottom">
         <span class="text-zinc-400 font-medium">
-          <span class="lang-en">Multi-model workflow &nbsp;·&nbsp; verification-first delivery &nbsp;·&nbsp; closed-loop iteration</span>
-          <span class="lang-zh">多模型工作流 &nbsp;·&nbsp; 驗證優先交付 &nbsp;·&nbsp; 閉環迭代</span>
+          <span class="lang-en">AI workflow design &nbsp;·&nbsp; verification-first delivery &nbsp;·&nbsp; closed-loop improvement</span>
+          <span class="lang-zh">AI 工作流設計 &nbsp;·&nbsp; 驗證優先交付 &nbsp;·&nbsp; 閉環改善</span>
         </span>
       </p>
 
@@ -779,7 +808,7 @@
       <div class="mt-12 text-center slide-in from-bottom">
         <p class="text-lg text-emerald-400/80 italic max-w-2xl mx-auto leading-relaxed mb-4">
           <span class="lang-en">"AI is not the headline. Shipping reliable systems with the right workflow, guardrails, and judgment is."</span>
-          <span class="lang-zh">「AI 不是 headline。真正重要的是用對 workflow、guardrails 與 judgment 把可靠系統交付出去。」</span>
+          <span class="lang-zh">「AI 不是重點詞。真正重要的是用對 workflow、guardrails 與 judgment，把可靠系統交付出去。」</span>
         </p>
       </div>
 
