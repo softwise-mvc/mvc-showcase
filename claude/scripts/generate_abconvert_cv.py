@@ -72,9 +72,9 @@ def build_cv() -> Document:
 
     add_section_heading(doc, "Professional Summary")
     doc.add_paragraph(
-        "AI-native technical leader with 20+ years across product, software architecture, and cross-functional delivery in software, fintech, blockchain, mobile, and IoT. "
-        "Over the past year, I have built and iterated AI-assisted production and lab systems using Claude, Codex, and Gemini for architecture design, bug fixing, workflow tuning, QA hardening, and closed-loop improvement. "
-        "Strong at turning ambiguous ideas into shippable systems with clear operating rules, verification layers, and fast iteration. Best suited for hands-on Technical Head / Engineering Lead roles where AI-native development, context engineering, and shipping discipline matter."
+        "AI-assisted system architect and builder with 20+ years across product, software architecture, and cross-functional delivery in software, fintech, blockchain, mobile, and IoT. "
+        "I turn ambiguous ideas into working software systems, using Claude, Codex, and Gemini to accelerate design, debugging, workflow refinement, and iterative delivery. "
+        "Over the past year, I have built and iterated AI-assisted production and lab systems with clear operating rules, verification layers, and fast feedback loops. Best suited for hands-on Technical Head / Engineering Lead roles where AI-assisted development, context quality, and shipping discipline matter."
     )
 
     add_section_heading(doc, "Core Competencies")
