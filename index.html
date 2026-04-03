@@ -44,12 +44,15 @@
     [data-lang="zh"] .lang-zh { display: inline; }
     [data-lang="en"] .lang-zh { display: none; }
     [data-lang="en"] .lang-en { display: inline; }
+    /* Hero load-in */
+    .hero-item { opacity: 0; transform: translateY(20px); }
+    .hero-item.show { opacity: 1; transform: translateY(0); transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
     /* Scroll animations */
-    .slide-in { opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .slide-in { opacity: 0; transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
     .slide-in.from-left { transform: translateX(-60px); }
     .slide-in.from-right { transform: translateX(60px); }
-    .slide-in.from-bottom { transform: translateY(30px); }
-    .slide-in.visible { opacity: 1; transform: translate(0); }
+    .slide-in.from-bottom { transform: translateY(24px) scale(0.97); }
+    .slide-in.visible { opacity: 1; transform: translateX(0) translateY(0) scale(1); }
     .slide-in.delay-1 { transition-delay: 0.1s; }
     .slide-in.delay-2 { transition-delay: 0.2s; }
     .slide-in.delay-3 { transition-delay: 0.3s; }
@@ -60,12 +63,25 @@
       -ms-user-select: none;
       user-select: none;
     }
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, #34d399, #10b981);
+      z-index: 100;
+      transition: width 0.12s linear;
+      pointer-events: none;
+    }
   </style>
   <!-- GoatCounter Analytics -->
   <script data-goatcounter="https://mvcadmin.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </head>
 <body class="bg-zinc-950 text-zinc-100 font-sans" data-lang="en">
+  <div id="scroll-progress"></div>
 
   <!-- Header -->
   <header class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
@@ -109,24 +125,24 @@
     <div class="max-w-6xl mx-auto px-6 py-20">
       <div class="flex flex-col-reverse md:flex-row md:items-center md:gap-12 mb-2">
         <div class="flex-1">
-          <p class="text-emerald-400 font-mono text-sm mb-4">
+          <p class="hero-item text-emerald-400 font-mono text-sm mb-4">
             <span class="lang-en">Hi, I'm</span><span class="lang-zh">嗨，我是</span>
           </p>
-          <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          <h1 class="hero-item text-5xl md:text-7xl font-bold tracking-tight mb-6">
             Marvin Chang
           </h1>
-          <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl mb-2">
+          <p class="hero-item text-xl md:text-2xl text-zinc-400 max-w-2xl mb-2">
             <span class="lang-en">AI-Assisted System Architect & Builder</span>
             <span class="lang-zh">AI-Assisted System Architect & Builder</span>
           </p>
-          <p class="text-sm text-zinc-600 max-w-2xl mb-4 font-mono tracking-wide">
+          <p class="hero-item text-sm text-zinc-600 max-w-2xl mb-4 font-mono tracking-wide">
             Financial Data Engineering · LLM Signal Systems · Full-Stack Delivery
           </p>
-      <p class="text-zinc-500 max-w-xl mb-10 leading-relaxed">
+      <p class="hero-item text-zinc-500 max-w-xl mb-10 leading-relaxed">
         <span class="lang-en">I turn ambiguous ideas into working software systems, using Claude, Codex, and Gemini to accelerate design, debugging, workflow refinement, and iterative delivery.</span>
         <span class="lang-zh">我把模糊想法落成可運作的軟體系統，並使用 Claude、Codex 與 Gemini 加速設計、除錯、workflow refinement 與 iterative delivery。</span>
       </p>
-      <div class="flex gap-4">
+      <div class="hero-item flex gap-4">
         <a href="#projects" class="px-6 py-3 bg-emerald-500 text-zinc-950 font-medium rounded-lg hover:bg-emerald-400 transition-colors text-sm">
           <span class="lang-en">View Projects</span><span class="lang-zh">瀏覽作品</span>
         </a>
@@ -710,7 +726,7 @@
             <span class="lang-zh">我把模糊需求整理成可執行 context：清楚範圍、系統規則、handoff notes 與 AI-assisted delivery 可直接落地的方向。</span>
           </p>
         </div>
-        <div class="slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+        <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6">
           <div class="text-2xl mb-3">🧩</div>
           <h3 class="font-semibold text-zinc-100 mb-2">
             <span class="lang-en">Guardrails & Verification</span>
@@ -721,7 +737,7 @@
             <span class="lang-zh">我會補上 runtime isolation、QA gates、audit logs、schema checks 與 deploy reality checks，讓 AI 產出的工作保持安全且可審查。</span>
           </p>
         </div>
-        <div class="slide-in from-bottom delay-2 bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+        <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6">
           <div class="text-2xl mb-3">🔁</div>
           <h3 class="font-semibold text-zinc-100 mb-2">
             <span class="lang-en">Closed-Loop Improvement</span>
@@ -934,6 +950,8 @@
       <div class="relative max-w-3xl mx-auto">
         <!-- Vertical line -->
         <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-zinc-800 md:-translate-x-px"></div>
+        <!-- Growing line overlay -->
+        <div id="timeline-grow" class="absolute left-4 md:left-1/2 top-0 w-px bg-emerald-400/40 md:-translate-x-px" style="height:0; transition: height 5.5s cubic-bezier(0.4, 0, 0.2, 1);"></div>
 
         <!-- Phase 6: Software Project Management (2025-2026) -->
         <div class="slide-in from-right relative flex items-start mb-12">
@@ -1385,6 +1403,11 @@
       });
     }
 
+    // Hero load-in
+    document.querySelectorAll('.hero-item').forEach((el, i) => {
+      setTimeout(() => el.classList.add('show'), 300 + i * 700);
+    });
+
     // Scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1395,6 +1418,29 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
+
+    // Timeline line growth
+    const timelineGrow = document.getElementById('timeline-grow');
+    const journeySection = document.getElementById('journey');
+    if (timelineGrow && journeySection) {
+      const lineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const fullHeight = journeySection.querySelector('.relative.max-w-3xl').offsetHeight;
+            timelineGrow.style.height = fullHeight + 'px';
+            lineObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.1 });
+      lineObserver.observe(journeySection);
+    }
+
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+      document.getElementById('scroll-progress').style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
 
     // Owner flag: visit with ?me to mark this browser as owner
     if (new URLSearchParams(location.search).has('me')) {
