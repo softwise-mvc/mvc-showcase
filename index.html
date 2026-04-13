@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marvin Chang | AI-Assisted System Architect & Builder</title>
-  <meta name="description" content="I turn ambiguous ideas into working software systems, using Claude, Codex, and Gemini to accelerate design, debugging, workflow refinement, and iterative delivery." />
-  <meta property="og:title" content="Marvin Chang | AI-Assisted System Architect & Builder" />
-  <meta property="og:description" content="AI-assisted system architect and builder focused on design, debugging, workflow refinement, and iterative delivery." />
+  <title>Marvin Chang | AI Solution Architect for Real-World Systems</title>
+  <meta name="description" content="I build AI systems end-to-end, from data preparation and model design to forecasting, trusted outputs, system integration, and real-world delivery." />
+  <meta property="og:title" content="Marvin Chang | AI Solution Architect for Real-World Systems" />
+  <meta property="og:description" content="AI pipeline design, system integration, and production-ready delivery across ESG, forecasting, fintech, IoT, and Web3." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mvc-ai.vercel.app" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
@@ -56,6 +56,80 @@
     .slide-in.delay-1 { transition-delay: 0.1s; }
     .slide-in.delay-2 { transition-delay: 0.2s; }
     .slide-in.delay-3 { transition-delay: 0.3s; }
+    .pipeline-table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgb(39 39 42);
+      border-radius: 1rem;
+      background: rgb(24 24 27);
+    }
+    .pipeline-table {
+      width: 100%;
+      min-width: 880px;
+      border-collapse: collapse;
+    }
+    .pipeline-table th,
+    .pipeline-table td {
+      border-bottom: 1px solid rgb(39 39 42);
+      border-right: 1px solid rgb(39 39 42);
+      padding: 1.2rem 1.25rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .pipeline-table th:last-child,
+    .pipeline-table td:last-child {
+      border-right: none;
+    }
+    .pipeline-table tr:last-child td {
+      border-bottom: none;
+    }
+    .pipeline-table th {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgb(52 211 153);
+      background: rgba(16, 185, 129, 0.05);
+    }
+    .pipeline-table td strong {
+      display: block;
+      color: rgb(244 244 245);
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .pipeline-table td span {
+      color: rgb(161 161 170);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+    .anchor-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .anchor-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 0.75rem;
+      border: 1px solid transparent;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+      pointer-events: none;
+    }
+    .anchor-card:hover::after {
+      border-color: rgba(52, 211, 153, 0.28);
+      background-color: rgba(16, 185, 129, 0.02);
+    }
+    .anchor-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: rgb(110 231 183);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease;
+    }
+    .anchor-link:hover {
+      color: rgb(167 243 208);
+    }
     /* Disable text selection */
     body {
       -webkit-user-select: none;
@@ -132,15 +206,19 @@
             Marvin Chang
           </h1>
           <p class="hero-item text-xl md:text-2xl text-zinc-400 max-w-2xl mb-2">
-            <span class="lang-en">AI-Assisted System Architect & Builder</span>
-            <span class="lang-zh">AI-Assisted System Architect & Builder</span>
+            <span class="lang-en">AI Solution Architect for Real-World Systems</span>
+            <span class="lang-zh">AI 系統架構師 — 從設計到落地</span>
           </p>
           <p class="hero-item text-sm text-zinc-600 max-w-2xl mb-4 font-mono tracking-wide">
-            Financial Data Engineering · LLM Signal Systems · Full-Stack Delivery
+            AI Pipeline Design · Forecasting Systems · ESG / Web3 / FinTech
           </p>
       <p class="hero-item text-zinc-500 max-w-xl mb-10 leading-relaxed">
-        <span class="lang-en">I turn ambiguous ideas into working software systems, using Claude, Codex, and Gemini to accelerate design, debugging, workflow refinement, and iterative delivery.</span>
-        <span class="lang-zh">我把模糊想法落成可運作的軟體系統，並使用 Claude、Codex 與 Gemini 加速設計、除錯、workflow refinement 與 iterative delivery。</span>
+        <span class="lang-en">I build AI systems end-to-end — from data preparation and model design to forecasting, trusted outputs, and real-world deployment.</span>
+        <span class="lang-zh">我專注打造端到端的 AI 系統，從資料整理、模型設計、預測分析，到可信輸出與實際部署落地。</span>
+      </p>
+      <p class="hero-item text-zinc-600 max-w-2xl mb-10 leading-relaxed">
+        <span class="lang-en">I work across AI pipeline design, system integration, and production-ready delivery.</span>
+        <span class="lang-zh">我長期投入 AI 流程設計、系統整合與可落地系統的實作。</span>
       </p>
       <div class="hero-item flex gap-4">
         <a href="#projects" class="px-6 py-3 bg-emerald-500 text-zinc-950 font-medium rounded-lg hover:bg-emerald-400 transition-colors text-sm">
@@ -169,14 +247,14 @@
         <span class="lang-en">Projects</span><span class="lang-zh">作品集</span>
       </h2>
       <p class="text-zinc-500 mb-4">
-        <span class="lang-en">Products and systems I've architected & delivered — from concept to production.</span>
-        <span class="lang-zh">從概念到上線 — 我規劃與交付的產品與系統。</span>
+              <span class="lang-en">Selected systems spanning AI, ESG, fintech, Web3, and product delivery.</span>
+              <span class="lang-zh">橫跨 AI、ESG、金融科技、Web3 與產品交付的代表案例。</span>
       </p>
       <p class="text-zinc-600 text-sm mb-10 flex items-center gap-2">
         <svg class="w-4 h-4 text-zinc-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
         <span>
           <span class="lang-en">Source code is in private repos. Recruiters & hiring managers — feel free to <a href="mailto:maxio.mvc@gmail.com" class="text-emerald-500 hover:text-emerald-400 transition-colors underline underline-offset-2">contact me</a> for access.</span>
-          <span class="lang-zh">原始碼存放於私人儲存庫。HR 或相關人員如需查看，歡迎<a href="mailto:maxio.mvc@gmail.com" class="text-emerald-500 hover:text-emerald-400 transition-colors underline underline-offset-2">聯繫我</a>開放權限。</span>
+          <span class="lang-zh">原始碼存放於私人儲存庫。招募單位如需查看，歡迎<a href="mailto:maxio.mvc@gmail.com" class="text-emerald-500 hover:text-emerald-400 transition-colors underline underline-offset-2">聯繫我</a>開放權限。</span>
         </span>
       </p>
 
@@ -277,7 +355,7 @@
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
               <span class="lang-en">Crypto trading operations system with multi-runner paper trading, closed-loop learning, deploy verification, and engineering reliability layers.</span>
-              <span class="lang-zh">多 runner 的加密貨幣交易與 paper-trading 系統，重點放在 closed-loop learning、deploy verification 與工程可靠性。</span>
+              <span class="lang-zh">多策略並行的加密貨幣交易與模擬交易系統，著重閉環學習、部署驗證與工程可靠性。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
@@ -313,7 +391,7 @@
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
               <span class="lang-en">Polymarket trading agent with whale tracking, signal ranking, and AI-assisted market scanning for faster opportunity review on Polygon.</span>
-              <span class="lang-zh">預測市場交易平台，具備鯨魚追蹤、跟單交易與套利偵測功能，部署於 Polygon 鏈上。</span>
+              <span class="lang-zh">預測市場交易代理，具備鯨魚追蹤、訊號排名與 AI 輔助市場掃描功能，部署於 Polygon 鏈上。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Next.js</span>
@@ -337,30 +415,48 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
           <!-- ESG AI Prediction System -->
-          <div class="card slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="ai">
+          <div class="anchor-card card slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:shadow-lg hover:border-zinc-700" data-category="ai">
+            <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-zinc-950/85 px-2.5 py-1 text-[11px] text-emerald-300 backdrop-blur">
+              <span>2024 featured ESG / carbon-data initiative</span>
+            </div>
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
                 <span class="text-2xl">🌱</span>
                 <h3 class="font-semibold text-lg text-zinc-100">
-                  <span class="lang-en">ESG AI — Carbon Prediction</span>
-                  <span class="lang-zh">ESG AI — 碳排預測系統</span>
+                  <span class="lang-en">Softwidom ESG AI Platform</span>
+                  <span class="lang-zh">秀緯科技 ESG AI 平台</span>
                 </h3>
               </div>
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-              <span class="lang-en">IoT-based power & air quality monitoring with AI prediction for carbon emission management and ESG compliance reporting.</span>
-              <span class="lang-zh">基於 IoT 的電力與空氣品質監測，搭配 AI 預測進行碳排管理與 ESG 合規報告。</span>
+              <span class="lang-en">An ESG and carbon-data AI initiative combining IoT sensing, air-quality AI prediction, carbon summarization, and Web3-backed traceability on IOTA for real sustainability scenarios.</span>
+              <span class="lang-zh">整合 IoT 感測、空氣品質 AI 預測、碳數據摘要，以及基於 IOTA 的 Web3 可信追蹤機制的 ESG / 碳數據 AI 專案，面向真實永續應用場景。</span>
+            </p>
+            <p class="text-zinc-500 text-sm mb-4 leading-relaxed">
+              <span class="lang-en">The work covered anomaly detection, data recovery, clustering, time-series forecasting, and trusted data records, with Web3 credential and IOTA-based traceability concepts aligned to decentralized identity and verifiable data workflows.</span>
+              <span class="lang-zh">內容涵蓋異常檢測、資料補全、聚類分析、時間序列預測與可信資料紀錄，並納入 Web3 憑證、IOTA 追溯機制，以及去中心化身份與可驗證資料流程的規劃。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Django</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">AI/ML</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Scikit-learn</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">TensorFlow / Keras</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">NLP</span>
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">IoT</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">ESG</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">W3C DID / VC</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">IPFS / Ethereum / IOTA</span>
             </div>
             <div class="flex items-center gap-2 text-xs text-emerald-400">
-              <span>👨‍💻 <span class="lang-en">Tech Lead</span><span class="lang-zh">技術主管</span></span>
+              <span>👨‍💻 <span class="lang-en">AI Pipeline & System Planning</span><span class="lang-zh">AI 流程與系統規劃</span></span>
               <span class="text-zinc-600">·</span>
-              <span class="text-sky-300/50">AI / IoT / ESG</span>
+              <span class="text-sky-300/50">AI / ESG / Forecasting</span>
+            </div>
+            <div class="mt-4">
+              <a href="#pipeline-table" class="anchor-link">
+                <span class="lang-en">See methods, algorithms, and tools</span>
+                <span class="lang-zh">查看方法、演算法與工具</span>
+                <span aria-hidden="true">↓</span>
+              </a>
             </div>
           </div>
 
@@ -407,7 +503,7 @@
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
               <span class="lang-en">AI-powered memory system for development — tracks localization keys, Git operations & enforces coding rules via graph database.</span>
-              <span class="lang-zh">AI 驅動的開發記憶系統 — 透過圖資料庫追蹤在地化金鑰、Git 操作並強制執行程式碼規範。</span>
+              <span class="lang-zh">AI 驅動的開發記憶系統 — 透過圖資料庫追蹤多語系翻譯鍵值、Git 操作並自動執行程式碼規範。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Python</span>
@@ -549,23 +645,24 @@
               <div class="flex items-center gap-2">
                 <span class="text-2xl">🏦</span>
                 <h3 class="font-semibold text-lg">
-                  <span class="lang-en">Enterprise Banking Platform</span>
-                  <span class="lang-zh">企業銀行平台</span>
+                  <span class="lang-en">Enterprise Mobile Banking App</span>
+                  <span class="lang-zh">企業網銀 APP</span>
                 </h3>
                 <span class="text-xs text-zinc-600 border border-zinc-700 px-1.5 py-0.5 rounded">NDA</span>
               </div>
               <svg class="w-4 h-4 text-zinc-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-              <span class="lang-en">Full-stack corporate banking suite — multi-platform native apps (iOS, Android, Flutter) with mock API backend.</span>
-              <span class="lang-zh">全端企業銀行套件 — 多平台原生應用（iOS、Android、Flutter）搭配模擬 API 後端。</span>
+              <span class="lang-en">Corporate mobile banking app — multi-platform (iOS, Android, Flutter) with Figma MCP-to-code AI workflow, GitLab CI/CD, automated code review, and QA pipeline.</span>
+              <span class="lang-zh">企業網銀 APP — 多平台開發（iOS、Android、Flutter），導入 Figma MCP 轉 AI 自動生成程式碼流程，搭配 GitLab CI/CD、自動化 code review 與 QA 管線。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Swift</span>
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Kotlin</span>
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Flutter</span>
               <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Node.js</span>
-              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Express</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">Figma MCP</span>
+              <span class="badge bg-zinc-800 text-zinc-400 text-xs px-2 py-0.5 rounded-full">GitLab CI/CD</span>
             </div>
             <div class="flex items-center gap-2 text-xs text-emerald-400">
               <span>🤖 AI-assisted</span>
@@ -676,7 +773,7 @@
               </div>
             </div>
             <p class="text-zinc-400 text-sm mb-4 leading-relaxed">
-              <span class="lang-en">Built e-commerce platforms for major brands (Taiwan TV, Hello Kitty). Designed national legal database website — won 1st prize in government competition.</span>
+              <span class="lang-en">Built e-commerce platforms for major brands (TTV, Hello Kitty). Designed national legal database website — won 1st prize in government competition.</span>
               <span class="lang-zh">為知名品牌（台視、Hello Kitty）建構電商平台。設計全國法規資料庫網站 — 政府競賽第一名。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mb-4">
@@ -697,6 +794,226 @@
     </div>
   </section>
 
+  <!-- AI System Pipeline -->
+  <section id="ai-pipeline" class="py-20 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="slide-in from-bottom mb-12">
+        <h2 class="text-3xl font-bold mb-4">
+          <span class="lang-en">AI System Pipeline</span><span class="lang-zh">AI 系統流程</span>
+        </h2>
+        <p class="text-xl text-zinc-300 max-w-3xl leading-snug mb-3">
+          <span class="lang-en">My AI experience starts below the application layer — with data quality, model logic, forecasting, and output design.</span>
+          <span class="lang-zh">我的 AI 經驗不是從應用層開始，而是從資料品質、模型邏輯、預測方法與輸出設計開始。</span>
+        </p>
+        <p class="text-zinc-500 max-w-3xl leading-relaxed">
+          <span class="lang-en">Built for ESG, carbon-data, air-quality AI prediction, and IOTA-based Web3 traceability use cases in 2024.</span>
+          <span class="lang-zh">這套能力在 2024 年被實際運用於 ESG、碳數據、空氣品質 AI 預測，以及基於 IOTA 的 Web3 可信追溯場景。</span>
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Data Cleaning</span><span class="lang-zh">資料清洗</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">Used Isolation Forest and One-Class SVM to detect anomalies and stabilize noisy environmental data before modeling.</span>
+            <span class="lang-zh">在建模前先用 Isolation Forest 與 One-Class SVM 做異常檢測，提升環境與感測資料的穩定性。</span>
+          </p>
+        </div>
+        <div class="slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Data Recovery</span><span class="lang-zh">資料補全</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">Applied KNN Imputer to recover missing values and improve continuity across time-series data.</span>
+            <span class="lang-zh">以 KNN Imputer 補足缺失值，讓時間序列資料更完整，便於後續分析與預測。</span>
+          </p>
+        </div>
+        <div class="slide-in from-bottom delay-2 bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Pattern Discovery</span><span class="lang-zh">模式探索</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">Used K-Means and DBSCAN to identify clusters, usage patterns, and hidden structure in the data.</span>
+            <span class="lang-zh">透過 K-Means 與 DBSCAN 找出資料中的群聚現象、使用模式與潛在結構。</span>
+          </p>
+        </div>
+        <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Forecasting</span><span class="lang-zh">時間序列預測</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">Built time-series prediction workflows with LSTM and GRU for air-quality AI prediction and carbon-related trend analysis.</span>
+            <span class="lang-zh">使用 LSTM 與 GRU 建立時間序列預測流程，用於空氣品質 AI 預測與碳數據相關趨勢分析。</span>
+          </p>
+        </div>
+        <div class="slide-in from-bottom delay-1 bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Readable Outputs</span><span class="lang-zh">可讀化輸出</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">Combined extractive and generative NLP methods to turn technical carbon data into summaries people can actually use.</span>
+            <span class="lang-zh">結合抽取式與生成式 NLP，把技術性碳數據轉成真正可閱讀、可使用的摘要內容。</span>
+          </p>
+        </div>
+        <div class="slide-in from-bottom delay-2 bg-zinc-900 border border-zinc-800 rounded-xl p-6">
+          <h3 class="font-semibold text-zinc-100 mb-2">
+            <span class="lang-en">Trusted Traceability</span><span class="lang-zh">可信追蹤</span>
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            <span class="lang-en">Integrated Merkle Tree, IPFS, IOTA Tangle, Ethereum, and Web3 credential concepts to strengthen data integrity, traceability, and verifiable records.</span>
+            <span class="lang-zh">結合 Merkle Tree、IPFS、IOTA Tangle、Ethereum 與 Web3 憑證概念，強化資料完整性、可追溯性與可驗證紀錄。</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-in from-bottom mt-10">
+        <div class="mb-4" id="pipeline-table">
+          <p class="text-[11px] uppercase tracking-[0.28em] text-emerald-400/80 mb-3">
+            <span class="lang-en">Methods, Algorithms, and Tools</span>
+            <span class="lang-zh">方法、演算法與工具</span>
+          </p>
+          <p class="text-zinc-300 max-w-3xl leading-relaxed">
+            <span class="lang-en">A concrete view of the techniques I used in the 2024 ESG, air-quality AI prediction, and IOTA-based Web3 traceability workflow.</span>
+            <span class="lang-zh">下面這張表是我在 2024 ESG、空氣品質 AI 預測，以及基於 IOTA 的 Web3 可信追溯流程中，實際使用的方法、演算法與工具。</span>
+          </p>
+        </div>
+
+        <div class="pipeline-table-wrap">
+          <table class="pipeline-table">
+            <thead>
+              <tr>
+                <th>
+                  <span class="lang-en">Step</span><span class="lang-zh">步驟</span>
+                </th>
+                <th>
+                  <span class="lang-en">Technique</span><span class="lang-zh">技術</span>
+                </th>
+                <th>
+                  <span class="lang-en">Algorithm</span><span class="lang-zh">演算法</span>
+                </th>
+                <th>
+                  <span class="lang-en">Model / Tool</span><span class="lang-zh">模型／工具</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong><span class="lang-en">Data Cleaning</span><span class="lang-zh">數據清洗</span></strong>
+                  <span><span class="lang-en">Noise handling before modeling</span><span class="lang-zh">建模前先處理異常與噪音</span></span>
+                </td>
+                <td>
+                  <strong><span class="lang-en">Anomaly Detection</span><span class="lang-zh">異常檢測</span></strong>
+                  <span><span class="lang-en">Detect unstable data points</span><span class="lang-zh">找出不穩定資料點</span></span>
+                </td>
+                <td>
+                  <strong>Isolation Forest, One-Class SVM</strong>
+                  <span><span class="lang-en">Outlier detection for environmental and sensor data</span><span class="lang-zh">用於環境與感測數據的離群值辨識</span></span>
+                </td>
+                <td>
+                  <strong>Scikit-learn</strong>
+                  <span>IsolationForest, OneClassSVM</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong><span class="lang-en">Data Recovery</span><span class="lang-zh">數據插補</span></strong>
+                  <span><span class="lang-en">Recover incomplete time-series values</span><span class="lang-zh">補足不完整的時間序列資料</span></span>
+                </td>
+                <td>
+                  <strong><span class="lang-en">Missing-Value Imputation</span><span class="lang-zh">數據填補</span></strong>
+                  <span><span class="lang-en">Improve continuity before analysis</span><span class="lang-zh">提高後續分析的連續性</span></span>
+                </td>
+                <td>
+                  <strong>KNN Imputer</strong>
+                  <span><span class="lang-en">Neighbor-based value recovery</span><span class="lang-zh">以鄰近資料推估缺失值</span></span>
+                </td>
+                <td>
+                  <strong>Scikit-learn</strong>
+                  <span>KNNImputer</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong><span class="lang-en">Data Aggregation</span><span class="lang-zh">數據聚合</span></strong>
+                  <span><span class="lang-en">Identify structure and groups in the data</span><span class="lang-zh">辨識資料中的群聚與結構</span></span>
+                </td>
+                <td>
+                  <strong><span class="lang-en">Clustering Analysis</span><span class="lang-zh">聚類分析</span></strong>
+                  <span><span class="lang-en">Find hidden patterns and segments</span><span class="lang-zh">找出潛在模式與分群</span></span>
+                </td>
+                <td>
+                  <strong>K-Means, DBSCAN</strong>
+                  <span><span class="lang-en">Cluster discovery across carbon and environmental data</span><span class="lang-zh">應用於碳數據與環境監測資料的分群分析</span></span>
+                </td>
+                <td>
+                  <strong>Scikit-learn</strong>
+                  <span>KMeans, DBSCAN</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong><span class="lang-en">Time-Series Forecasting</span><span class="lang-zh">時間序列預測</span></strong>
+                  <span><span class="lang-en">Forecast changes over time</span><span class="lang-zh">預測指標隨時間的變化</span></span>
+                </td>
+                <td>
+                  <strong><span class="lang-en">Deep Learning</span><span class="lang-zh">深度學習</span></strong>
+                  <span><span class="lang-en">Sequential prediction workflows</span><span class="lang-zh">用於序列資料的預測流程</span></span>
+                </td>
+                <td>
+                  <strong>LSTM, GRU</strong>
+                  <span><span class="lang-en">Applied to air-quality AI prediction and carbon-related trends</span><span class="lang-zh">應用於空氣品質 AI 預測與碳數據趨勢分析</span></span>
+                </td>
+                <td>
+                  <strong>TensorFlow / Keras</strong>
+                  <span>LSTM, GRU</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong><span class="lang-en">Carbon Data Summary</span><span class="lang-zh">碳數據摘要</span></strong>
+                  <span><span class="lang-en">Turn technical output into readable summaries</span><span class="lang-zh">把技術輸出轉成可閱讀內容</span></span>
+                </td>
+                <td>
+                  <strong><span class="lang-en">Natural Language Processing</span><span class="lang-zh">自然語言處理</span></strong>
+                  <span><span class="lang-en">Readable reports and summaries</span><span class="lang-zh">產出可讀式報告與摘要</span></span>
+                </td>
+                <td>
+                  <strong><span class="lang-en">Extractive and Generative Summarization</span><span class="lang-zh">抽取式摘要、生成式摘要</span></strong>
+                  <span><span class="lang-en">Translate carbon data into usable business outputs</span><span class="lang-zh">將碳數據轉為可使用的業務輸出</span></span>
+                </td>
+                <td>
+                  <strong>Hugging Face, OpenAI</strong>
+                  <span>T5, GPT-4, BERT</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong><span class="lang-en">On-Chain Traceability</span><span class="lang-zh">數據上鏈</span></strong>
+                  <span><span class="lang-en">Preserve integrity and traceability</span><span class="lang-zh">保留資料完整性與可追溯性</span></span>
+                </td>
+                <td>
+                  <strong><span class="lang-en">Decentralized Storage</span><span class="lang-zh">去中心化存儲</span></strong>
+                  <span><span class="lang-en">Trusted record and credential design</span><span class="lang-zh">建立可信資料與憑證紀錄</span></span>
+                </td>
+                <td>
+                  <strong>Merkle Tree, IPFS</strong>
+                  <span><span class="lang-en">Blockchain integrity, storage, and proof logic</span><span class="lang-zh">區塊鏈完整性、存證與驗證邏輯</span></span>
+                </td>
+                <td>
+                  <strong>IOTA Tangle, Ethereum, IPFS</strong>
+                  <span><span class="lang-en">Traceable records and Web3-backed credentials for carbon-related data</span><span class="lang-zh">應用於碳數據場景的可追蹤履歷與 Web3 憑證機制</span></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- AI Workflow -->
   <section id="ai-workflow" class="py-20 border-t border-zinc-800">
     <div class="max-w-6xl mx-auto px-6">
@@ -704,12 +1021,12 @@
       <!-- Header -->
       <div class="slide-in from-bottom mb-12">
         <h2 class="text-3xl font-bold mb-4">
-          <span class="lang-en">How I Work</span><span class="lang-zh">我的工作方式</span>
+          <span class="lang-en">How I Build</span><span class="lang-zh">系統建構方式</span>
         </h2>
         <!-- Elevator pitch -->
         <p class="text-xl text-zinc-300 max-w-2xl leading-snug">
-          <span class="lang-en">AI coding becomes valuable only when it is structured, verifiable, and tied to shipping discipline.</span>
-          <span class="lang-zh">AI coding 只有在被結構化、可驗證，並納入交付紀律時才有價值。</span>
+          <span class="lang-en">AI becomes valuable when the pipeline is well designed, the system is properly integrated, and the output can survive real-world use.</span>
+          <span class="lang-zh">AI 真正有價值，不在於生成得多快，而在於流程是否設計得好、系統是否整合得完整，以及結果能不能承受真實場景。</span>
         </p>
       </div>
 
@@ -718,34 +1035,34 @@
         <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6">
           <div class="text-2xl mb-3">⚡</div>
           <h3 class="font-semibold text-zinc-100 mb-2">
-            <span class="lang-en">Context Engineering</span>
-            <span class="lang-zh">Context Engineering</span>
+            <span class="lang-en">Model-to-System Thinking</span>
+            <span class="lang-zh">從模型到系統的整體思考</span>
           </h3>
           <p class="text-zinc-500 text-sm leading-relaxed">
-            <span class="lang-en">I turn ambiguous requirements into executable context: clear scope, system rules, handoff notes, and implementation-ready direction for AI-assisted delivery.</span>
-            <span class="lang-zh">我把模糊需求整理成可執行 context：清楚範圍、系統規則、handoff notes 與 AI-assisted delivery 可直接落地的方向。</span>
+            <span class="lang-en">I think beyond features and interfaces. I care about how data is prepared, how models behave, and how outputs connect back into the system.</span>
+            <span class="lang-zh">我不只關心功能或介面，而是會往下看資料怎麼處理、模型怎麼運作、結果又怎麼回到整個系統裡。</span>
           </p>
         </div>
         <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6">
           <div class="text-2xl mb-3">🧩</div>
           <h3 class="font-semibold text-zinc-100 mb-2">
-            <span class="lang-en">Guardrails & Verification</span>
-            <span class="lang-zh">Guardrails 與驗證</span>
+            <span class="lang-en">Cross-Layer Integration</span>
+            <span class="lang-zh">跨層整合能力</span>
           </h3>
           <p class="text-zinc-500 text-sm leading-relaxed">
-            <span class="lang-en">I add runtime isolation, QA gates, audit logs, schema checks, and deploy reality checks so AI-generated work stays safe and reviewable.</span>
-            <span class="lang-zh">我會補上 runtime isolation、QA gates、audit logs、schema checks 與 deploy reality checks，讓 AI 產出的工作保持安全且可審查。</span>
+            <span class="lang-en">From IoT devices and databases to forecasting models, summaries, dashboards, and traceability, I connect the full chain.</span>
+            <span class="lang-zh">從 IoT 裝置、資料庫，到預測模型、摘要輸出、儀表板與可信追蹤，我能把整條鏈路串起來。</span>
           </p>
         </div>
         <div class="slide-in from-bottom bg-zinc-900 border border-zinc-800 rounded-xl p-6">
           <div class="text-2xl mb-3">🔁</div>
           <h3 class="font-semibold text-zinc-100 mb-2">
-            <span class="lang-en">Closed-Loop Improvement</span>
-            <span class="lang-zh">Closed-Loop Improvement</span>
+            <span class="lang-en">Verification-Driven Delivery</span>
+            <span class="lang-zh">以驗證為核心的交付</span>
           </h3>
           <p class="text-zinc-500 text-sm leading-relaxed">
-            <span class="lang-en">I connect outputs, reviews, failure signals, and operational feedback back into the next iteration so the system improves instead of repeating errors.</span>
-            <span class="lang-zh">我把輸出、review、failure signals 與 operational feedback 回接到下一輪迭代，讓系統會進步而不是重複犯錯。</span>
+            <span class="lang-en">I care about guardrails, reviewability, and release quality because a system is only valuable when it can be trusted after launch.</span>
+            <span class="lang-zh">我重視 guardrails、可審查性與交付品質，因為系統只有在上線後仍然可信，才真正有價值。</span>
           </p>
         </div>
       </div>
@@ -759,8 +1076,8 @@
               <span class="lang-zh">AI 工作流運作模型</span>
             </p>
             <h3 class="text-xl md:text-2xl font-semibold text-zinc-100 leading-tight">
-              <span class="lang-en">AI workflow for delivery, implementation, and quality control.</span>
-              <span class="lang-zh">面向交付、實作與品質控制的 AI 工作流。</span>
+              <span class="lang-en">From pipeline design to reliable delivery.</span>
+              <span class="lang-zh">從流程設計到可靠交付。</span>
             </h3>
           </div>
 
@@ -775,8 +1092,8 @@
                 <span class="lang-zh">需求與決策框架</span>
               </h4>
               <p class="text-sm leading-relaxed text-zinc-400">
-                <span class="lang-en">AI workflow design, context shaping, and delivery direction.</span>
-                <span class="lang-zh">AI 工作流設計、context shaping 與交付方向。</span>
+                <span class="lang-en">Define the pipeline, choose the right methods, and frame the system clearly before implementation.</span>
+                <span class="lang-zh">在實作前先定義流程、選擇合適方法，並把整體系統方向整理清楚。</span>
               </p>
             </div>
 
@@ -794,8 +1111,8 @@
                 <span class="lang-zh">AI 輔助實作與除錯</span>
               </h4>
               <p class="text-sm leading-relaxed text-zinc-400">
-                <span class="lang-en">Claude, Codex, and Gemini for implementation, review, debugging, and iteration.</span>
-                <span class="lang-zh">運用 Claude、Codex、Gemini 進行實作、review、除錯與迭代。</span>
+                <span class="lang-en">Use the right AI tools for implementation, review, debugging, and iteration without losing engineering judgment.</span>
+                <span class="lang-zh">在保有工程判斷的前提下，使用合適的 AI 工具進行實作、review、除錯與迭代。</span>
               </p>
             </div>
 
@@ -813,8 +1130,8 @@
                 <span class="lang-zh">驗證與閉環控制</span>
               </h4>
               <p class="text-sm leading-relaxed text-zinc-400">
-                <span class="lang-en">QA gates, deploy checks, runtime guardrails, and feedback loops.</span>
-                <span class="lang-zh">QA gates、部署檢查、runtime guardrails 與 feedback loops。</span>
+                <span class="lang-en">Keep the system reviewable and stable through QA gates, deploy checks, runtime guardrails, and feedback loops.</span>
+                <span class="lang-zh">透過 QA gates、部署檢查、runtime guardrails 與 feedback loops，讓系統保持穩定且可審查。</span>
               </p>
             </div>
           </div>
@@ -824,16 +1141,16 @@
       <!-- Proof line -->
       <p class="text-center text-zinc-600 text-sm slide-in from-bottom">
         <span class="text-zinc-400 font-medium">
-          <span class="lang-en">AI workflow design &nbsp;·&nbsp; verification-first delivery &nbsp;·&nbsp; closed-loop improvement</span>
-          <span class="lang-zh">AI 工作流設計 &nbsp;·&nbsp; 驗證優先交付 &nbsp;·&nbsp; 閉環改善</span>
+          <span class="lang-en">AI pipeline design &nbsp;·&nbsp; system integration &nbsp;·&nbsp; production-ready delivery</span>
+          <span class="lang-zh">AI 流程設計 &nbsp;·&nbsp; 系統整合 &nbsp;·&nbsp; 可交付實作</span>
         </span>
       </p>
 
       <!-- Closing statement -->
       <div class="mt-12 text-center slide-in from-bottom">
         <p class="text-lg text-emerald-400/80 italic max-w-2xl mx-auto leading-relaxed mb-4">
-          <span class="lang-en">"AI is not the headline. Shipping reliable systems with the right workflow, guardrails, and judgment is."</span>
-          <span class="lang-zh">「AI 不是重點詞。真正重要的是用對 workflow、guardrails 與 judgment，交付出可靠的系統。」</span>
+          <span class="lang-en">"What matters is not just using AI, but turning it into systems that can hold up in real use."</span>
+          <span class="lang-zh">「重點不只是用了 AI，而是能不能把它做成在真實場景中站得住的系統。」</span>
         </p>
       </div>
 
@@ -844,73 +1161,70 @@
   <section id="skills" class="py-20 border-t border-zinc-800">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-10">
-        <span class="lang-en">Tech Stack</span><span class="lang-zh">技術棧</span>
+        <span class="lang-en">AI & System Capabilities</span><span class="lang-zh">AI 與系統能力</span>
       </h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-6 gap-6">
 
         <div>
           <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
-            <span class="lang-en">Languages</span><span class="lang-zh">程式語言</span>
+            <span class="lang-en">AI Pipeline</span><span class="lang-zh">AI 流程</span>
           </h3>
           <ul class="space-y-2 text-sm text-zinc-400">
-            <li>JavaScript / TypeScript</li>
+            <li>Data Cleaning</li>
+            <li>Anomaly Detection</li>
+            <li>Data Recovery</li>
+            <li>Clustering Analysis</li>
+            <li>Time-Series Forecasting</li>
+            <li>Readable Output Design</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
+            <span class="lang-en">Methods & Models</span><span class="lang-zh">方法與模型</span>
+          </h3>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li>Isolation Forest / One-Class SVM</li>
+            <li>KNN Imputer</li>
+            <li>K-Means / DBSCAN</li>
+            <li>LSTM / GRU</li>
+            <li>T5 / GPT / BERT</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
+            <span class="lang-en">System Integration</span><span class="lang-zh">系統整合</span>
+          </h3>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li>IoT Data Flow</li>
+            <li>Forecasting + Dashboard Integration</li>
+            <li>Carbon Data Workflows</li>
+            <li>Traceability Design</li>
+            <li>API / Database / Model Coordination</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">Cloud & Delivery</h3>
+          <ul class="space-y-2 text-sm text-zinc-400">
             <li>Python</li>
-            <li>Swift</li>
-            <li>Kotlin</li>
-            <li>Dart (Flutter)</li>
-            <li>HTML / CSS</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
-            <span class="lang-en">Frameworks</span><span class="lang-zh">框架</span>
-          </h3>
-          <ul class="space-y-2 text-sm text-zinc-400">
-            <li>Next.js / React</li>
-            <li>FastAPI / Express</li>
-            <li>Flutter</li>
-            <li>SwiftUI</li>
-            <li>Streamlit</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
-            <span class="lang-en">Cloud & DB</span><span class="lang-zh">雲端與資料庫</span>
-          </h3>
-          <ul class="space-y-2 text-sm text-zinc-400">
-            <li>AWS EC2 / RDS / S3</li>
-            <li>AWS CloudFront / SES</li>
-            <li>AWS ECS</li>
-            <li>PostgreSQL / Neo4j</li>
-            <li>Redis</li>
-            <li>Firebase / Supabase</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">DevOps</h3>
-          <ul class="space-y-2 text-sm text-zinc-400">
             <li>Docker</li>
             <li>CI/CD Pipelines</li>
             <li>Prometheus / Grafana</li>
-            <li>Vercel</li>
-            <li>GitLab CI</li>
-            <li>Deno</li>
-            <li>pg_cron</li>
+            <li>AWS / Vercel / Supabase</li>
+            <li>PostgreSQL / Neo4j / Redis</li>
           </ul>
         </div>
 
         <div>
           <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
-            <span class="lang-en">AI & Tools</span><span class="lang-zh">AI 工具</span>
+            <span class="lang-en">AI Tools</span><span class="lang-zh">AI 工具</span>
           </h3>
           <ul class="space-y-2 text-sm text-zinc-400">
             <li>Claude / Claude Code</li>
             <li>OpenAI / Codex</li>
             <li>Gemini</li>
-            <li>wagmi / viem (Web3)</li>
             <li>Vercel AI SDK</li>
             <li>Supabase Edge Functions</li>
             <li>OpenClaw</li>
@@ -919,15 +1233,14 @@
 
         <div>
           <h3 class="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">
-            <span class="lang-en">Data Engineering</span><span class="lang-zh">資料工程</span>
+            <span class="lang-en">Product Delivery</span><span class="lang-zh">產品交付</span>
           </h3>
           <ul class="space-y-2 text-sm text-zinc-400">
-            <li>ETL Pipeline Design</li>
-            <li>Multi-source Aggregation</li>
-            <li>Unstructured Document ETL</li>
-            <li>Financial APIs (TWSE / FinMind)</li>
-            <li>Closed-loop Feedback</li>
-            <li>Cron Orchestration</li>
+            <li>Requirement Framing</li>
+            <li>Architecture Planning</li>
+            <li>Cross-Functional Coordination</li>
+            <li>Verification Workflow</li>
+            <li>Production-Ready Delivery</li>
           </ul>
         </div>
 
@@ -942,8 +1255,8 @@
         <span class="lang-en">Career Journey</span><span class="lang-zh">職涯歷程</span>
       </h2>
       <p class="text-zinc-500 mb-12">
-        <span class="lang-en">From hardware to software, from electronics to AI — 20+ years of evolution.</span>
-        <span class="lang-zh">從硬體到軟體，從電子到 AI — 超過 20 年的持續進化。</span>
+        <span class="lang-en">From software and hardware to AI systems — 20+ years of building across multiple technology shifts.</span>
+        <span class="lang-zh">從軟體、硬體一路走到 AI 系統，橫跨多次技術轉變的 20+ 年實作歷程。</span>
       </p>
 
       <!-- Timeline -->
@@ -979,18 +1292,18 @@
           <div class="ml-12 md:ml-0 md:mr-[calc(50%+2rem)] md:text-right">
             <span class="text-emerald-400 font-mono text-sm font-semibold">2022 — 2024</span>
             <h3 class="text-lg font-semibold text-zinc-100 mt-1">
-              <span class="lang-en">AI-Driven Development & DevOps</span>
-              <span class="lang-zh">AI 驅動開發 & DevOps</span>
+              <span class="lang-en">Applied AI, ESG, and Forecasting Systems</span>
+              <span class="lang-zh">應用型 AI、ESG 與預測系統</span>
             </h3>
             <p class="text-zinc-500 text-sm mt-1 leading-relaxed">
-              <span class="lang-en">ERP systems, ESG carbon emission AI prediction, warehouse management. Full-stack development with AI pair programming & AWS cloud deployment.</span>
-              <span class="lang-zh">ERP 系統、ESG 碳排 AI 預測、倉儲管理系統。AI 配對編程全端開發，AWS 雲端部署與維運。</span>
+              <span class="lang-en">Worked on ESG AI initiatives, carbon-data workflows, air-quality forecasting, and system integration across software, IoT, and Web3-related contexts.</span>
+              <span class="lang-zh">參與 ESG AI 專案、碳數據流程、空氣品質預測，以及橫跨軟體、IoT 與 Web3 場景的系統整合。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mt-2 md:justify-end">
-              <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">Python</span>
-              <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">AI/ML</span>
-              <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">AWS</span>
-              <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">Docker</span>
+              <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">AI Pipeline</span>
+              <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">Forecasting</span>
+              <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">ESG</span>
+              <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">IoT</span>
             </div>
           </div>
           <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-emerald-400 rounded-full -translate-x-1.5 mt-1.5 ring-4 ring-zinc-950"></div>
@@ -1005,8 +1318,8 @@
               <span class="lang-zh">區塊鏈 & Web3</span>
             </h3>
             <p class="text-zinc-500 text-sm mt-1 leading-relaxed">
-              <span class="lang-en">Led crypto wallet APP, NFT marketplace DAPP, ICO token issuance & DeFi staking. Technical lead for full blockchain product lifecycle.</span>
-              <span class="lang-zh">主導加密錢包 APP、NFT 交易平台 DAPP、ICO 代幣發行與 DeFi 質押。區塊鏈產品完整技術主管。</span>
+              <span class="lang-en">Led crypto wallet app, NFT marketplace dApp, ICO token issuance & DeFi staking. Technical lead for full blockchain product lifecycle.</span>
+              <span class="lang-zh">主導加密錢包 app、NFT 交易平台 dApp、ICO 代幣發行與 DeFi 質押，負責區塊鏈產品的完整技術主導。</span>
             </p>
             <div class="flex flex-wrap gap-1.5 mt-2">
               <span class="text-xs text-zinc-600 bg-zinc-900 px-2 py-0.5 rounded">Web3</span>
@@ -1109,34 +1422,34 @@
       </h2>
       <div class="max-w-3xl">
         <p class="text-zinc-300 leading-relaxed mb-4 text-lg">
-          <span class="lang-en">I build software with AI — not just about it.</span>
-          <span class="lang-zh">我用 AI 寫程式 — 不只是談論 AI。</span>
+          <span class="lang-en">I focus on AI system planning and turning product ideas into deliverable systems.</span>
+          <span class="lang-zh">我專注於 AI 系統規劃，並把產品想法真正做成可交付的系統。</span>
         </p>
         <p class="text-zinc-400 leading-relaxed mb-6">
-          <span class="lang-en">Over 20 years of shipping products across software, fintech, blockchain, mobile, and IoT. My current focus is AI-assisted product delivery: using Claude, Codex, and Gemini to shape requirements, design systems, debug production issues, and keep release quality under control.</span>
-          <span class="lang-zh">超過 20 年橫跨軟體、金融科技、區塊鏈、行動應用與 IoT 的產品交付經驗。我目前的主軸是 AI-assisted product delivery：使用 Claude、Codex 與 Gemini 來整理需求、設計系統、處理 production issues，並把 release quality 守住。</span>
+          <span class="lang-en">My AI experience is not limited to prompt engineering or API integration. I have worked through the full modeling pipeline — data cleaning, anomaly detection, data recovery, clustering, time-series forecasting, summarization, and system integration into ESG, air-quality, and carbon-data applications.</span>
+          <span class="lang-zh">我的 AI 經驗不只是在 prompt engineering 或 API 整合層。我曾實際參與完整建模流程，從資料清洗、異常檢測、資料補全、聚類分析、時間序列預測，到摘要生成，再把結果整合進 ESG、空氣品質與碳數據應用系統。</span>
         </p>
 
         <!-- Highlights grid -->
         <div class="grid md:grid-cols-2 gap-x-8 gap-y-4 mb-8 text-sm">
           <div>
             <h3 class="text-emerald-400 font-semibold mb-2">
-              <span class="lang-en">AI-Native Development</span>
-              <span class="lang-zh">AI 原生開發</span>
+              <span class="lang-en">AI Pipeline Design</span>
+              <span class="lang-zh">AI 流程設計</span>
             </h3>
             <p class="text-zinc-500 leading-relaxed">
-              <span class="lang-en">I use AI for architecture planning, spec refinement, bug triage, code generation, review, and iteration control — not just for faster typing.</span>
-              <span class="lang-zh">我把 AI 用在 architecture planning、spec refinement、bug triage、code generation、review 與 iteration control，而不只是加快打字。</span>
+              <span class="lang-en">I am comfortable working from data quality and model logic upward, not just from the interface or prompt layer.</span>
+              <span class="lang-zh">我熟悉從資料品質與模型邏輯開始往上規劃，而不只是停留在介面或 prompt layer。</span>
             </p>
           </div>
           <div>
             <h3 class="text-emerald-400 font-semibold mb-2">
               <span class="lang-en">System Guardrails</span>
-              <span class="lang-zh">System Guardrails</span>
+              <span class="lang-zh">系統防護機制</span>
             </h3>
             <p class="text-zinc-500 leading-relaxed">
-              <span class="lang-en">My strongest work is around runtime isolation, QA blocking, schema-contract checks, deployment verification, and closed-loop operating rules.</span>
-              <span class="lang-zh">我最強的地方在 runtime isolation、QA blocking、schema-contract checks、deployment verification 與 closed-loop operating rules。</span>
+              <span class="lang-en">My work is strongest when AI methods, system behavior, and release quality need to be aligned into something stable and reviewable.</span>
+              <span class="lang-zh">當 AI 方法、系統行為與交付品質需要被整合成穩定且可審查的結果時，正是我最能發揮的地方。</span>
             </p>
           </div>
           <div>
@@ -1145,18 +1458,18 @@
               <span class="lang-zh">實績證明</span>
             </h3>
             <p class="text-zinc-500 leading-relaxed">
-              <span class="lang-en">7 patents (Taiwan/Japan/Germany). Technical lead for blockchain wallet, NFT marketplace, and digital product builds. Cross-domain background from hardware to AI-native software.</span>
-              <span class="lang-zh">7 項專利（台灣/日本/德國）。曾主導區塊鏈錢包、NFT 平台與多種數位產品交付。從硬體一路走到 AI-native software 的跨域背景。</span>
+              <span class="lang-en">My background spans 20+ years across software, fintech, blockchain, mobile, IoT, and AI-related systems, with experience in both product delivery and technical planning.</span>
+              <span class="lang-zh">我的背景橫跨 20 多年軟體、金融科技、區塊鏈、行動應用、IoT 與 AI 相關系統，同時累積了產品交付與技術規劃的實作經驗。</span>
             </p>
           </div>
           <div>
             <h3 class="text-emerald-400 font-semibold mb-2">
               <span class="lang-en">Founder-Friendly Execution</span>
-              <span class="lang-zh">Founder-Friendly Execution</span>
+              <span class="lang-zh">創業導向的執行力</span>
             </h3>
             <p class="text-zinc-500 leading-relaxed">
-              <span class="lang-en">I am comfortable working from ambiguity, turning loose ideas into scoped plans, and keeping shipping momentum without losing quality.</span>
-              <span class="lang-zh">我可以在高模糊環境下工作，把鬆散想法收斂成可執行計畫，同時維持交付速度而不犧牲品質。</span>
+              <span class="lang-en">I can work from ambiguity, connect business direction with technical reality, and keep delivery moving without losing quality.</span>
+              <span class="lang-zh">我可以在高模糊環境下工作，把商業方向與技術現實接起來，同時維持交付速度與品質。</span>
             </p>
           </div>
           <div class="md:col-span-2">
@@ -1165,8 +1478,8 @@
               <span class="lang-zh">這種背景為什麼有價值</span>
             </h3>
             <p class="text-zinc-500 leading-relaxed">
-              <span class="lang-en">My background spans product planning, engineering delivery, and AI-assisted software creation. That mix helps me make pragmatic decisions about scope, system behavior, and release tradeoffs instead of treating AI as a demo layer.</span>
-              <span class="lang-zh">我的背景同時涵蓋 product planning、engineering delivery 與 AI-assisted software creation。這讓我在 scope、system behavior 與 release tradeoffs 上能做務實決策，而不是把 AI 當成 demo layer。</span>
+              <span class="lang-en">I bring together product planning, AI pipeline thinking, and engineering delivery. That combination helps me judge what should be modeled, what should be automated, what must be verified, and what is actually worth shipping.</span>
+              <span class="lang-zh">我結合了產品規劃、AI 流程思維與工程交付能力，因此能更務實地判斷哪些問題值得建模、哪些流程該自動化、哪些環節必須驗證，以及哪些成果真正值得交付。</span>
             </p>
           </div>
         </div>
