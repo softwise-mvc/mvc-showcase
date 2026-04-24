@@ -1783,9 +1783,8 @@
         '🔗 ' + ref,
         'UA: ' + ua.slice(-80)
       ].join('\n');
-      fetch('https://ntfy.sh/mvcadmin-pp', {
+      fetch('https://ntfy.sh/mvcadmin-pp?title=' + encodeURIComponent(title), {
         method: 'POST',
-        headers: { 'Title': title },
         body: body
       }).catch(() => {});
     }
