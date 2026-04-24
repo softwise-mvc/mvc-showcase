@@ -1774,12 +1774,12 @@
       else if (/Linux/i.test(ua)) device = 'Linux';
       const title = isOwner ? '👤 Owner Visit' : (isBot ? '🤖 Bot Visit' : '👤 Portfolio Visitor');
       const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
-      const screen = window.screen.width + 'x' + window.screen.height;
+      const screenSize = window.screen.width + 'x' + window.screen.height;
       const lang = navigator.language || 'n/a';
       const ref = document.referrer || 'Direct visit';
       const body = [
         '📍 ' + now,
-        '📱 ' + device + ' · ' + screen + ' · ' + lang,
+        '📱 ' + device + ' · ' + screenSize + ' · ' + lang,
         '🔗 ' + ref,
         'UA: ' + ua.slice(-80)
       ].join('\n');
