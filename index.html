@@ -1760,14 +1760,33 @@
       localStorage.setItem('owner', '1');
     }
 
-    // Visitor notification via ntfy.sh (skip owner & same session)
-    if (!localStorage.getItem('owner') && !sessionStorage.getItem('notified')) {
+    // Visitor notification via ntfy.sh (once per session)
+    if (!sessionStorage.getItem('notified')) {
       sessionStorage.setItem('notified', '1');
+      const ua = navigator.userAgent || '';
+      const isBot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|linkedinbot|whatsapp|telegram|gptbot|claudebot|ccbot|perplexity|duckduckbot|applebot|yandex|baiduspider/i.test(ua);
+      const isOwner = !!localStorage.getItem('owner');
+      let device = 'Unknown';
+      if (/iPhone|iPad|iPod/i.test(ua)) device = 'iOS';
+      else if (/Android/i.test(ua)) device = 'Android';
+      else if (/Macintosh|Mac OS X/i.test(ua)) device = 'Mac';
+      else if (/Windows/i.test(ua)) device = 'Windows';
+      else if (/Linux/i.test(ua)) device = 'Linux';
+      const title = isOwner ? '👤 Owner Visit' : (isBot ? '🤖 Bot Visit' : '👤 Portfolio Visitor');
       const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+      const screen = window.screen.width + 'x' + window.screen.height;
+      const lang = navigator.language || 'n/a';
+      const ref = document.referrer || 'Direct visit';
+      const body = [
+        '📍 ' + now,
+        '📱 ' + device + ' · ' + screen + ' · ' + lang,
+        '🔗 ' + ref,
+        'UA: ' + ua.slice(-80)
+      ].join('\n');
       fetch('https://ntfy.sh/mvcadmin-pp', {
         method: 'POST',
-        headers: { 'Title': 'Portfolio Visitor' },
-        body: '📍 ' + now + '\n' + (document.referrer || 'Direct visit')
+        headers: { 'Title': title },
+        body: body
       }).catch(() => {});
     }
   </script>
